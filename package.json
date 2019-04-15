@@ -1,0 +1,25 @@
+{
+  "name": "typescript-datastructures-algorithms",
+  "version": "0.0.1",
+  "description": "常见数据结构与算法的ts实现。",
+  "keywords": [
+    "data structures",
+    "algorithms",
+    "typescript"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silverbulletlee/TypeScript-DataStructures-Algorithms.git"
+  },
+  "author": "silverbulletlee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silverbulletlee/TypeScript-DataStructures-Algorithms/issues",
+    "email" : "silverbulletlee@gmail.com"
+  },
+  "homepage": "https://github.com/silverbulletlee/TypeScript-DataStructures-Algorithms#readme"
+}
