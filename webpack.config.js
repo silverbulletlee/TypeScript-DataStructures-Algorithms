@@ -30,6 +30,7 @@ module.exports = {
         port,
         host: '0.0.0.0',
         after: () => {
+            // TODO 优化浏览器多次打开同一地址
             opn(`http://${ipv4}:${port}`);
         }
     }
