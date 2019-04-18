@@ -1,5 +1,3 @@
-import Stack from './Stack';
-declare const _default: {
-    Stack: typeof Stack;
-};
-export default _default;
+import { Stack } from './Stack';
+import { Queue } from './Queue';
+export { Stack, Queue };

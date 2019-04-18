@@ -1,4 +1,4 @@
-import dataStructor from './dataStructor';
+import * as dataStructor  from './dataStructor';
 
 export {
     dataStructor

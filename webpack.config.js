@@ -1,5 +1,5 @@
 /**
- * @file webpack config
+ * @file webpack.config.js
  * @author silverbulletlee
  * @Date 2019.04.17
  */

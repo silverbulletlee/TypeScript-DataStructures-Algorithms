@@ -1,9 +1,6 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var Stack_1 = __importDefault(require("./Stack"));
-exports.default = {
-    Stack: Stack_1.default
-};
+var Stack_1 = require("./Stack");
+exports.Stack = Stack_1.Stack;
+var Queue_1 = require("./Queue");
+exports.Queue = Queue_1.Queue;

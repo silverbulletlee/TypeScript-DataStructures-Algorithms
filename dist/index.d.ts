@@ -1,6 +1,2 @@
-declare const _default: {
-    dataStructor: {
-        Stack: typeof import("./dataStructor/Stack").default;
-    };
-};
-export default _default;
+import * as dataStructor from './dataStructor';
+export { dataStructor };
