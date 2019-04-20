@@ -4,12 +4,11 @@
  */
 export declare class Stack {
     private stack;
-    constructor();
     pop(): any;
     push(ele: any): number;
     size(): number;
     isEmpty(): boolean;
     peek(): any;
     clear(): void;
-    print(): any[];
+    print(): string;
 }

@@ -4,11 +4,11 @@
  */
 
 export class Queue {
-    private queue: any[];
-    constructor() {
-        this.queue = [];
-    }
+    private queue: any[] = [];
     dequeue(): any {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.queue.shift();
     }
     enqueue(ele: any): number {
@@ -21,12 +21,15 @@ export class Queue {
         return this.queue.length === 0;
     }
     front(): any {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.queue[0];
     }
     clear(): void {
         this.queue.length = 0;
     }
-    print(): any[] {
-        return this.queue;
+    print(): string {
+        return JSON.stringify(this.queue);
     }
 };

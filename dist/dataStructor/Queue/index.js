@@ -9,6 +9,9 @@ var Queue = /** @class */ (function () {
         this.queue = [];
     }
     Queue.prototype.dequeue = function () {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.queue.shift();
     };
     Queue.prototype.enqueue = function (ele) {
@@ -21,13 +24,16 @@ var Queue = /** @class */ (function () {
         return this.queue.length === 0;
     };
     Queue.prototype.front = function () {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.queue[0];
     };
     Queue.prototype.clear = function () {
         this.queue.length = 0;
     };
     Queue.prototype.print = function () {
-        return this.queue;
+        return JSON.stringify(this.queue);
     };
     return Queue;
 }());

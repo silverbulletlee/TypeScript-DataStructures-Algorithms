@@ -4,11 +4,11 @@
  */
 
 export class Stack {
-    private stack: any[];
-    constructor() {
-        this.stack = [];
-    }
+    private stack: any[] = [];
     pop(): any {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.stack.pop();
     }
     push(ele: any): number {
@@ -21,12 +21,15 @@ export class Stack {
         return this.stack.length === 0;
     }
     peek(): any {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.stack[this.stack.length - 1];
     }
     clear(): void {
         this.stack.length = 0;
     }
-    print(): any[] {
-        return this.stack;
+    print(): string {
+        return JSON.stringify(this.stack);
     }
 };

@@ -9,6 +9,9 @@ var Stack = /** @class */ (function () {
         this.stack = [];
     }
     Stack.prototype.pop = function () {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.stack.pop();
     };
     Stack.prototype.push = function (ele) {
@@ -21,13 +24,16 @@ var Stack = /** @class */ (function () {
         return this.stack.length === 0;
     };
     Stack.prototype.peek = function () {
+        if (this.isEmpty()) {
+            return undefined;
+        }
         return this.stack[this.stack.length - 1];
     };
     Stack.prototype.clear = function () {
         this.stack.length = 0;
     };
     Stack.prototype.print = function () {
-        return this.stack;
+        return JSON.stringify(this.stack);
     };
     return Stack;
 }());

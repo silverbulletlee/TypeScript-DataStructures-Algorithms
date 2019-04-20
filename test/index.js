@@ -18,7 +18,7 @@ console.log('stack', stack.isEmpty());
 stack.pop();
 stack.pop();
 console.log('stack', stack.size());
-console.log('stack', stack.print());
+console.log('stack', stack.stack);
 
 // Queue 使用用例
 let queue = new Queue();
@@ -33,4 +33,4 @@ console.log('queue', queue.isEmpty());
 queue.dequeue();
 queue.dequeue();
 console.log('queue', queue.size());
-console.log('queue', queue.print());
+console.log('queue', queue.queue);
