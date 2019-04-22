@@ -1,10 +1,20 @@
-import { dataStructor } from '../src';
+import { dataStructor, sort } from '../src';
 
 const {
     Stack,
     Queue
 } = dataStructor;
 
+const {
+    bubbleSort,
+    selectSort,
+    insertSort,
+    mergeSort,
+    quickSort
+} = sort;
+
+const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
+let arrCopy;
 // Stack 使用用例
 let stack = new Stack();
 
@@ -34,3 +44,25 @@ queue.dequeue();
 queue.dequeue();
 console.log('queue', queue.size());
 console.log('queue', queue.queue);
+
+
+console.log(arr)
+
+// 冒泡排序 使用用例
+bubbleSort(arrCopy = Array.from(arr));
+console.log('bubbleSort', arrCopy);
+
+// 选择排序 使用用例
+selectSort(arrCopy = Array.from(arr));
+console.log('selectSort', arrCopy);
+
+// 插入排序 使用用例
+insertSort(arrCopy = Array.from(arr));
+console.log('insertSort', arrCopy);
+
+// 归并排序 使用用例
+console.log('mergeSort', mergeSort(Array.from(arr)));
+
+// 快速排序 使用用例
+quickSort(arrCopy = Array.from(arr));
+console.log('quickSort', arrCopy);
