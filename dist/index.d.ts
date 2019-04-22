@@ -1,2 +1,3 @@
 import * as dataStructor from './dataStructor';
-export { dataStructor };
+import * as sort from './algorithms/sort';
+export { dataStructor, sort };

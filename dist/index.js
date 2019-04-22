@@ -9,3 +9,5 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var dataStructor = __importStar(require("./dataStructor"));
 exports.dataStructor = dataStructor;
+var sort = __importStar(require("./algorithms/sort"));
+exports.sort = sort;
