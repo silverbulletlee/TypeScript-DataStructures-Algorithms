@@ -49,10 +49,10 @@ console.log('queue', queue.size());
 // LinkedList 使用用例
 let linkedList = new LinkedList();
 console.log('linkedList', linkedList.isEmpty());
-list.append(15);
-list.append(10);
+linkedList.append(15);
+linkedList.append(10);
 console.log('linkedList', linkedList.getHead());
-list.append(11);
+linkedList.append(11);
 console.log('linkedList', linkedList.size());
 console.log('linkedList', linkedList.isEmpty());
 console.log('linkedList', linkedList.indexOf(10));
