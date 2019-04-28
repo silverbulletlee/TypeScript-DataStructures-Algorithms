@@ -95,16 +95,6 @@ var LinkedList = /** @class */ (function () {
         this.length++;
         return true;
     };
-    LinkedList.prototype.getElementAt = function (index) {
-        if (index >= 0 && index <= this.length) {
-            var node = this.head;
-            for (var i = 0; i < index && node != null; i++) {
-                node = node.next;
-            }
-            return node;
-        }
-        return undefined;
-    };
     LinkedList.prototype.toString = function () {
         var res = [];
         var cur = this.head;

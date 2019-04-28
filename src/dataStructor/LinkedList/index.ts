@@ -109,16 +109,6 @@ export class LinkedList {
 
         return true;
     }
-    getElementAt(index: number) {
-        if (index >= 0 && index <= this.length) {
-          let node = this.head;
-          for (let i = 0; i < index && node != null; i++) {
-            node = node.next;
-          }
-          return node;
-        }
-        return undefined;
-      }
     toString(): string {
         let res: any[] = [];
         let cur: listNodeType = this.head;

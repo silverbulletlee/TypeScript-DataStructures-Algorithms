@@ -10,3 +10,5 @@ var mergeSort_1 = require("./mergeSort");
 exports.mergeSort = mergeSort_1.mergeSort;
 var quickSort_1 = require("./quickSort");
 exports.quickSort = quickSort_1.quickSort;
+var heapSort_1 = require("./heapSort");
+exports.heapSort = heapSort_1.heapSort;

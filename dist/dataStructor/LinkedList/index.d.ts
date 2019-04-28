@@ -14,9 +14,5 @@ export declare class LinkedList {
     remove(val: any): listNodeType;
     getHead(): listNodeType;
     insert(pos: number, val: any): boolean;
-    getElementAt(index: number): {
-        val: any;
-        next: any;
-    };
     toString(): string;
 }

@@ -7,12 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var merge = function (left, right) {
     var res = [];
     while (left.length && right.length) {
-        if (left[0] < right[0]) {
-            res.push(left.shift());
-        }
-        else {
-            res.push(right.shift());
-        }
+        left[0] < right[0]
+            ? res.push(left.shift())
+            : res.push(right.shift());
     }
     return res.concat(left, right);
 };

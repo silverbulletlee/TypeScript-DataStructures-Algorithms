@@ -2,7 +2,8 @@ import { dataStructor, sort } from '../src';
 
 const {
     Stack,
-    Queue
+    Queue,
+    LinkedList
 } = dataStructor;
 
 const {
@@ -10,7 +11,8 @@ const {
     selectSort,
     insertSort,
     mergeSort,
-    quickSort
+    quickSort,
+    heapSort
 } = sort;
 
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
@@ -28,7 +30,7 @@ console.log('stack', stack.isEmpty());
 stack.pop();
 stack.pop();
 console.log('stack', stack.size());
-console.log('stack', stack.stack);
+
 
 // Queue 使用用例
 let queue = new Queue();
@@ -43,10 +45,25 @@ console.log('queue', queue.isEmpty());
 queue.dequeue();
 queue.dequeue();
 console.log('queue', queue.size());
-console.log('queue', queue.queue);
+
+// LinkedList 使用用例
+let linkedList = new LinkedList();
+console.log('linkedList', linkedList.isEmpty());
+list.append(15);
+list.append(10);
+console.log('linkedList', linkedList.getHead());
+list.append(11);
+console.log('linkedList', linkedList.size());
+console.log('linkedList', linkedList.isEmpty());
+console.log('linkedList', linkedList.indexOf(10));
+console.log('linkedList', linkedList.remove(10));
+linkedList.insert(1, 12);
+console.log('linkedList', linkedList.size());
+console.log('linkedList', linkedList.removeAt(1));
+console.log('linkedList', linkedList.toString());
 
 
-console.log(arr)
+console.log(arr);
 
 // 冒泡排序 使用用例
 bubbleSort(arrCopy = Array.from(arr));
@@ -66,3 +83,7 @@ console.log('mergeSort', mergeSort(Array.from(arr)));
 // 快速排序 使用用例
 quickSort(arrCopy = Array.from(arr));
 console.log('quickSort', arrCopy);
+
+// 堆排序 使用用例
+heapSort(arrCopy = Array.from(arr));
+console.log('heapSort', arrCopy);
