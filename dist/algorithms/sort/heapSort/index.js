@@ -14,26 +14,26 @@ var heapify = function (array) {
         buildMaxHeap(array, i, array.length);
     }
 };
-var buildMaxHeap = function (array, index, length) {
+var buildMaxHeap = function (array, index, heapSize) {
     var leftIndex = getLeftIndex(index);
     var rightIndex = getRightIndex(index);
     // 没有子节点，因为堆是完全二叉树没有左节点必然没有右节点
-    if (length < leftIndex) {
+    if (heapSize < leftIndex) {
         return;
     }
     // 只有左节点
-    if (leftIndex <= length && length < rightIndex) {
+    if (leftIndex <= heapSize && heapSize < rightIndex) {
         if (array[index] < array[leftIndex]) {
             utils_1.swap(array, index, leftIndex);
-            buildMaxHeap(array, leftIndex, length);
+            buildMaxHeap(array, leftIndex, heapSize);
         }
     }
     // 存在两个节点
-    if (rightIndex <= length) {
+    if (rightIndex <= heapSize) {
         var maxIndex = (array[leftIndex] < array[rightIndex]) ? rightIndex : leftIndex;
         if (array[index] < array[maxIndex]) {
             utils_1.swap(array, index, maxIndex);
-            buildMaxHeap(array, maxIndex, length);
+            buildMaxHeap(array, maxIndex, heapSize);
         }
     }
 };

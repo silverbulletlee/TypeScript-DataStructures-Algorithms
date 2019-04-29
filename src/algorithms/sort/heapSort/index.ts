@@ -16,28 +16,28 @@ const heapify = (array: number[]): void => {
     }
 };
 
-const buildMaxHeap = (array: number[], index: number, length: number): void => {
+const buildMaxHeap = (array: number[], index: number, heapSize: number): void => {
     let leftIndex = getLeftIndex(index);
     let rightIndex = getRightIndex(index);
 
     // 没有子节点，因为堆是完全二叉树没有左节点必然没有右节点
-    if (length < leftIndex) {
+    if (heapSize < leftIndex) {
         return;
     }
     // 只有左节点
-    if (leftIndex <= length && length < rightIndex) {
+    if (leftIndex <= heapSize && heapSize < rightIndex) {
         if(array[index] < array[leftIndex]) {
             swap(array, index, leftIndex);
-            buildMaxHeap(array, leftIndex, length);
+            buildMaxHeap(array, leftIndex, heapSize);
         }
     }
     // 存在两个节点
-    if (rightIndex <= length) {
+    if (rightIndex <= heapSize) {
         let maxIndex = (array[leftIndex] < array[rightIndex])? rightIndex : leftIndex;
 
         if (array[index] < array[maxIndex]) {
             swap(array, index, maxIndex);
-            buildMaxHeap(array, maxIndex, length);
+            buildMaxHeap(array, maxIndex, heapSize);
         } 
     }
 };
