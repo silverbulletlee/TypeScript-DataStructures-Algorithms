@@ -16,7 +16,7 @@ const {
 } = sort;
 
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
-let arrCopy;
+
 // Stack 使用用例
 let stack = new Stack();
 
@@ -60,30 +60,25 @@ console.log('linkedList', linkedList.remove(10));
 linkedList.insert(1, 12);
 console.log('linkedList', linkedList.size());
 console.log('linkedList', linkedList.removeAt(1));
-console.log('linkedList', linkedList.toString());
+// console.log('linkedList', linkedList.toString());
 
 
 console.log(arr);
 
 // 冒泡排序 使用用例
-bubbleSort(arrCopy = Array.from(arr));
-console.log('bubbleSort', arrCopy);
+console.log('bubbleSort', bubbleSort(Array.from(arr)));
 
 // 选择排序 使用用例
-selectSort(arrCopy = Array.from(arr));
-console.log('selectSort', arrCopy);
+console.log('selectSort', selectSort(Array.from(arr)));
 
 // 插入排序 使用用例
-insertSort(arrCopy = Array.from(arr));
-console.log('insertSort', arrCopy);
+console.log('insertSort', insertSort(Array.from(arr)));
 
 // 归并排序 使用用例
 console.log('mergeSort', mergeSort(Array.from(arr)));
 
 // 快速排序 使用用例
-quickSort(arrCopy = Array.from(arr));
-console.log('quickSort', arrCopy);
+console.log('quickSort', quickSort(Array.from(arr)));
 
 // 堆排序 使用用例
-heapSort(arrCopy = Array.from(arr));
-console.log('heapSort', arrCopy);
+console.log('heapSort', heapSort(Array.from(arr)));

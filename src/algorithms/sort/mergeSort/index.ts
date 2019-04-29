@@ -20,7 +20,7 @@ const mergeSortRec = (array: number[]): number[] => {
         return array;
     }
 
-    let mid = Math.floor(array.length / 2);
+    let mid = array.length >> 1;
 
     return merge(mergeSortRec(array.slice(0, mid)), mergeSortRec(array.slice(mid)));
 };

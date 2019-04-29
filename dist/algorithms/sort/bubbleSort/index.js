@@ -13,4 +13,5 @@ exports.bubbleSort = function (array) {
             }
         }
     }
+    return array;
 };

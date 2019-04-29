@@ -14,4 +14,5 @@ exports.insertSort = function (array) {
         }
         array[j] = temp;
     }
+    return array;
 };

@@ -17,4 +17,5 @@ exports.selectSort = function (array) {
             utils_1.swap(array, minIndex, i);
         }
     }
+    return array;
 };

@@ -1,1 +1,1 @@
-export declare const bubbleSort: (array: number[]) => void;
+export declare const bubbleSort: (array: number[]) => number[];

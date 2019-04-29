@@ -5,7 +5,7 @@
 
 import { swap } from '../../../utils';
 
-export const selectSort = (array: number[]): void => {
+export const selectSort = (array: number[]): number[] => {
     for (let i = 0; i < array.length; i++) {
         let minIndex = i;
         for (let j = i; j < array.length; j++) {
@@ -17,4 +17,6 @@ export const selectSort = (array: number[]): void => {
             swap(array, minIndex, i);
         }
     }
+
+    return array;
 };

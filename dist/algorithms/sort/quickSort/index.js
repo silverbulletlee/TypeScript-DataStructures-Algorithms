@@ -44,4 +44,5 @@ exports.quickSort = function (array, start, end) {
     }
     exports.quickSort(array, start, pivotIndex - 1);
     exports.quickSort(array, pivotIndex + 1, end);
+    return array;
 };

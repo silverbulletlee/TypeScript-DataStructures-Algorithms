@@ -17,7 +17,7 @@ var mergeSortRec = function (array) {
     if (array.length <= 1) {
         return array;
     }
-    var mid = Math.floor(array.length / 2);
+    var mid = array.length >> 1;
     return merge(mergeSortRec(array.slice(0, mid)), mergeSortRec(array.slice(mid)));
 };
 exports.mergeSort = function (array) {

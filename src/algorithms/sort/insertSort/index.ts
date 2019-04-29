@@ -3,7 +3,7 @@
  * @author silverbulletlee
  */
 
-export const insertSort = (array: number[]): void => {
+export const insertSort = (array: number[]): number[] => {
     for (let i = 1; i < array.length; i++) {
         let temp = array[i];
         let j = i;
@@ -13,4 +13,6 @@ export const insertSort = (array: number[]): void => {
         }
         array[j] = temp;
     }
+
+    return array;
 };

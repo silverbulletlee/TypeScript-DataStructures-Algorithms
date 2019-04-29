@@ -7,11 +7,11 @@ import { swap } from '../../../utils';
 
 const getLeftIndex = (index: number): number => (index * 2 + 1);
 const getRightIndex = (index: number): number => ((index + 1) * 2);
-const getParentIndex = (index: number): number => Math.floor((index - 1) / 2);
+const getParentIndex = (index: number): number => ((index - 1) >> 1);
 
 const heapify = (array: number[]): void => {
-    let lastTreePos = getParentIndex(array.length);
-    for (let i = lastTreePos; i >= 0; i++) {
+    let lastTreePos = getParentIndex(array.length - 1);
+    for (let i = lastTreePos; i >= 0; i--) {
         buildMaxHeap(array, i, array.length);
     }
 };
@@ -33,7 +33,7 @@ const buildMaxHeap = (array: number[], index: number, length: number): void => {
     }
     // 存在两个节点
     if (rightIndex <= length) {
-        let maxIndex = (array[leftIndex] < array[rightIndex]) ? rightIndex : leftIndex;
+        let maxIndex = (array[leftIndex] < array[rightIndex])? rightIndex : leftIndex;
 
         if (array[index] < array[maxIndex]) {
             swap(array, index, maxIndex);
@@ -42,7 +42,7 @@ const buildMaxHeap = (array: number[], index: number, length: number): void => {
     }
 };
 
-export const heapSort = (array: number[]): void => {
+export const heapSort = (array: number[]): number[] => {
     // 将待排序数组堆化
     heapify(array);
     for (let i = array.length - 1; i > 0; i--) {
@@ -51,4 +51,6 @@ export const heapSort = (array: number[]): void => {
         // 重新建堆 将最大元素调整到堆顶
         buildMaxHeap(array, 0, i - 1);
     }
+
+    return array;
 };

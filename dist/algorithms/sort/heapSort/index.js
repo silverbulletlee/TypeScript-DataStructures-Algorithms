@@ -7,10 +7,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var utils_1 = require("../../../utils");
 var getLeftIndex = function (index) { return (index * 2 + 1); };
 var getRightIndex = function (index) { return ((index + 1) * 2); };
-var getParentIndex = function (index) { return Math.floor((index - 1) / 2); };
+var getParentIndex = function (index) { return ((index - 1) >> 1); };
 var heapify = function (array) {
-    var lastTreePos = getParentIndex(array.length);
-    for (var i = lastTreePos; i >= 0; i++) {
+    var lastTreePos = getParentIndex(array.length - 1);
+    for (var i = lastTreePos; i >= 0; i--) {
         buildMaxHeap(array, i, array.length);
     }
 };
@@ -46,4 +46,5 @@ exports.heapSort = function (array) {
         // 重新建堆 将最大元素调整到堆顶
         buildMaxHeap(array, 0, i - 1);
     }
+    return array;
 };

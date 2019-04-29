@@ -24,7 +24,7 @@ const quickSortRec = (array: number[]): number[] => (
         )
 );
 
-export const quickSort = (array: number[], start: number = 0, end: number = (array.length - 1)): void => {
+export const quickSort = (array: number[], start: number = 0, end: number = (array.length - 1)): number[] => {
     if (start >= end) {
         return;
     }
@@ -56,4 +56,6 @@ export const quickSort = (array: number[], start: number = 0, end: number = (arr
 
     quickSort(array, start, pivotIndex - 1);
     quickSort(array, pivotIndex + 1, end);
+
+    return array;
 };
