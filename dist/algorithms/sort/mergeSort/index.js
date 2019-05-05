@@ -4,8 +4,8 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var merge = function (left, right) {
-    var res = [];
+const merge = (left, right) => {
+    let res = [];
     while (left.length && right.length) {
         left[0] < right[0]
             ? res.push(left.shift())
@@ -13,13 +13,13 @@ var merge = function (left, right) {
     }
     return res.concat(left, right);
 };
-var mergeSortRec = function (array) {
+const mergeSortRec = (array) => {
     if (array.length <= 1) {
         return array;
     }
-    var mid = array.length >> 1;
+    let mid = array.length >> 1;
     return merge(mergeSortRec(array.slice(0, mid)), mergeSortRec(array.slice(mid)));
 };
-exports.mergeSort = function (array) {
+exports.mergeSort = (array) => {
     return mergeSortRec(array);
 };

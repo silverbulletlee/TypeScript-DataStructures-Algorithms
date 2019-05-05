@@ -4,10 +4,10 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.insertSort = function (array) {
-    for (var i = 1; i < array.length; i++) {
-        var temp = array[i];
-        var j = i;
+exports.insertSort = (array) => {
+    for (let i = 1; i < array.length; i++) {
+        let temp = array[i];
+        let j = i;
         while (j > 0 && array[j - 1] > temp) {
             array[j] = array[j - 1];
             j--;

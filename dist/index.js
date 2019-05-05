@@ -7,7 +7,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var dataStructor = __importStar(require("./dataStructor"));
+const dataStructor = __importStar(require("./dataStructor"));
 exports.dataStructor = dataStructor;
-var sort = __importStar(require("./algorithms/sort"));
+const sort = __importStar(require("./algorithms/sort"));
 exports.sort = sort;
+const dynamicPrograming = __importStar(require("./algorithms/dynamicPrograming"));
+exports.dynamicPrograming = dynamicPrograming;

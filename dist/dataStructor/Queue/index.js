@@ -4,38 +4,37 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var Queue = /** @class */ (function () {
-    function Queue() {
+class Queue {
+    constructor() {
         this.queue = [];
     }
-    Queue.prototype.dequeue = function () {
+    dequeue() {
         if (this.isEmpty()) {
             return undefined;
         }
         return this.queue.shift();
-    };
-    Queue.prototype.enqueue = function (ele) {
+    }
+    enqueue(ele) {
         return this.queue.push(ele);
-    };
-    Queue.prototype.size = function () {
+    }
+    size() {
         return this.queue.length;
-    };
-    Queue.prototype.isEmpty = function () {
+    }
+    isEmpty() {
         return this.queue.length === 0;
-    };
-    Queue.prototype.front = function () {
+    }
+    front() {
         if (this.isEmpty()) {
             return undefined;
         }
         return this.queue[0];
-    };
-    Queue.prototype.clear = function () {
+    }
+    clear() {
         this.queue.length = 0;
-    };
-    Queue.prototype.print = function () {
+    }
+    print() {
         return JSON.stringify(this.queue);
-    };
-    return Queue;
-}());
+    }
+}
 exports.Queue = Queue;
 ;

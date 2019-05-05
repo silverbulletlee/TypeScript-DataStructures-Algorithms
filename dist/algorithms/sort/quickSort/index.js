@@ -4,26 +4,24 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = require("../../../utils");
+const utils_1 = require("../../../utils");
 // 仅做理解快排思想，要是使用的话数据量大的时候会爆栈·····
-var quickSortRec = function (array) { return (array.length <= 1
+const quickSortRec = (array) => (array.length <= 1
     ? array
     : quickSortRec(array
         .slice(1)
-        .filter(function (num) { return num <= array[0]; }))
+        .filter(num => num <= array[0]))
         .concat(array[0], quickSortRec(array
         .slice(1)
-        .filter(function (num) { return num > array[0]; })))); };
-exports.quickSort = function (array, start, end) {
-    if (start === void 0) { start = 0; }
-    if (end === void 0) { end = (array.length - 1); }
+        .filter(num => num > array[0]))));
+exports.quickSort = (array, start = 0, end = (array.length - 1)) => {
     if (start >= end) {
         return;
     }
-    var i = start;
-    var j = end;
-    var pivotIndex = start;
-    var pivot = array[pivotIndex];
+    let i = start;
+    let j = end;
+    let pivotIndex = start;
+    let pivot = array[pivotIndex];
     while (i < j) {
         while (i < j) {
             if (array[j] < pivot) {

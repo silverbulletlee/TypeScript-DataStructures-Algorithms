@@ -4,15 +4,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @file 链表类实现
  * @author silverbulletlee
  */
-var ListNode_1 = require("./ListNode");
-var LinkedList = /** @class */ (function () {
-    function LinkedList() {
+const ListNode_1 = require("./ListNode");
+class LinkedList {
+    constructor() {
         this.length = 0;
         this.head = null;
     }
-    LinkedList.prototype.append = function (val) {
-        var listNode = new ListNode_1.ListNode(val);
-        var cur = null;
+    append(val) {
+        let listNode = new ListNode_1.ListNode(val);
+        let cur = null;
         if (this.head === null) {
             this.head = listNode;
         }
@@ -24,17 +24,17 @@ var LinkedList = /** @class */ (function () {
             cur.next = listNode;
         }
         return ++this.length;
-    };
-    LinkedList.prototype.removeAt = function (pos) {
+    }
+    removeAt(pos) {
         if (this.head === null) {
             throw new Error('Uncaught ReferenceError: 链表为空,不能进行移除操作');
         }
         if (pos < 0 || this.length < pos) {
             throw new Error('Uncaught RangeError: 超出有效范围');
         }
-        var index = 0;
-        var cur = this.head;
-        var pre = cur;
+        let index = 0;
+        let cur = this.head;
+        let pre = cur;
         if (pos === 0) {
             this.head = cur.next;
         }
@@ -47,14 +47,14 @@ var LinkedList = /** @class */ (function () {
         }
         this.length--;
         return cur.val;
-    };
-    LinkedList.prototype.isEmpty = function () {
+    }
+    isEmpty() {
         return this.length === 0;
-    };
-    LinkedList.prototype.size = function () {
+    }
+    size() {
         return this.length;
-    };
-    LinkedList.prototype.indexOf = function (val) {
+    }
+    indexOf(val) {
         var cur = this.head;
         var index = 0;
         while (cur) {
@@ -65,21 +65,21 @@ var LinkedList = /** @class */ (function () {
             index++;
         }
         return -1;
-    };
-    LinkedList.prototype.remove = function (val) {
+    }
+    remove(val) {
         return this.removeAt(this.indexOf(val));
-    };
-    LinkedList.prototype.getHead = function () {
+    }
+    getHead() {
         return this.head;
-    };
-    LinkedList.prototype.insert = function (pos, val) {
+    }
+    insert(pos, val) {
         if (pos < 0 || this.length < pos) {
             return false;
         }
-        var listNode = new ListNode_1.ListNode(val);
-        var index = 0;
-        var cur = this.head;
-        var pre = cur;
+        let listNode = new ListNode_1.ListNode(val);
+        let index = 0;
+        let cur = this.head;
+        let pre = cur;
         if (pos === 0) {
             listNode.next = cur;
             this.head = listNode;
@@ -94,16 +94,15 @@ var LinkedList = /** @class */ (function () {
         }
         this.length++;
         return true;
-    };
-    LinkedList.prototype.toString = function () {
-        var res = [];
-        var cur = this.head;
+    }
+    toString() {
+        let res = [];
+        let cur = this.head;
         while (cur) {
             res.push(cur.val);
             cur = cur.next;
         }
         return res.join(' -> ');
-    };
-    return LinkedList;
-}());
+    }
+}
 exports.LinkedList = LinkedList;

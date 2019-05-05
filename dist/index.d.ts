@@ -1,3 +1,4 @@
 import * as dataStructor from './dataStructor';
 import * as sort from './algorithms/sort';
-export { dataStructor, sort };
+import * as dynamicPrograming from './algorithms/dynamicPrograming';
+export { dataStructor, sort, dynamicPrograming };

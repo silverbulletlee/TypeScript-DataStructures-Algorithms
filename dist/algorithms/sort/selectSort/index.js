@@ -4,11 +4,11 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var utils_1 = require("../../../utils");
-exports.selectSort = function (array) {
-    for (var i = 0; i < array.length; i++) {
-        var minIndex = i;
-        for (var j = i; j < array.length; j++) {
+const utils_1 = require("../../../utils");
+exports.selectSort = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        let minIndex = i;
+        for (let j = i; j < array.length; j++) {
             if (array[j] < array[minIndex]) {
                 minIndex = j;
             }

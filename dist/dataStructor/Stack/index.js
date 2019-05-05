@@ -4,38 +4,37 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var Stack = /** @class */ (function () {
-    function Stack() {
+class Stack {
+    constructor() {
         this.stack = [];
     }
-    Stack.prototype.pop = function () {
+    pop() {
         if (this.isEmpty()) {
             return undefined;
         }
         return this.stack.pop();
-    };
-    Stack.prototype.push = function (ele) {
+    }
+    push(ele) {
         return this.stack.push(ele);
-    };
-    Stack.prototype.size = function () {
+    }
+    size() {
         return this.stack.length;
-    };
-    Stack.prototype.isEmpty = function () {
+    }
+    isEmpty() {
         return this.stack.length === 0;
-    };
-    Stack.prototype.peek = function () {
+    }
+    peek() {
         if (this.isEmpty()) {
             return undefined;
         }
         return this.stack[this.stack.length - 1];
-    };
-    Stack.prototype.clear = function () {
+    }
+    clear() {
         this.stack.length = 0;
-    };
-    Stack.prototype.print = function () {
+    }
+    print() {
         return JSON.stringify(this.stack);
-    };
-    return Stack;
-}());
+    }
+}
 exports.Stack = Stack;
 ;

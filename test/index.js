@@ -1,4 +1,4 @@
-import { dataStructor, sort } from '../src';
+import { dataStructor, sort, dynamicPrograming } from '../src';
 
 const {
     Stack,
@@ -15,6 +15,10 @@ const {
     heapSort
 } = sort;
 
+const {
+    fibonacci,
+    LCS
+} = dynamicPrograming;
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
 
 // Stack 使用用例
@@ -82,3 +86,17 @@ console.log('quickSort', quickSort(Array.from(arr)));
 
 // 堆排序 使用用例
 console.log('heapSort', heapSort(Array.from(arr)));
+
+// 动态规划相关
+
+// 斐波那契数列
+// console.log('fibonacci', fibonacci(0));
+console.log('fibonacci', fibonacci(1));
+console.log('fibonacci', fibonacci(2));
+console.log('fibonacci', fibonacci(3));
+console.log('fibonacci', fibonacci(10));
+console.log('fibonacci', fibonacci(20));
+
+// 最长公共子序列
+console.log('LCS', LCS('educational', 'advantage'));
+console.log('LCS', LCS('didactical', 'advantage'));

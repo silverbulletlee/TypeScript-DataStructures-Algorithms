@@ -4,12 +4,11 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var ListNode = /** @class */ (function () {
-    function ListNode(val) {
+class ListNode {
+    constructor(val) {
         this.next = null;
         this.val = val;
     }
-    return ListNode;
-}());
+}
 exports.ListNode = ListNode;
 ;

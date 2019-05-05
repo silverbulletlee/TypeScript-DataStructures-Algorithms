@@ -4,7 +4,6 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.swap = function (array, i, j) {
-    var _a;
-    _a = [array[j], array[i]], array[i] = _a[0], array[j] = _a[1];
+exports.swap = (array, i, j) => {
+    [array[i], array[j]] = [array[j], array[i]];
 };
