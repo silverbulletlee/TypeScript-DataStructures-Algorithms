@@ -6,7 +6,11 @@
         "strict": true,
         "outDir": "./dist",
         "esModuleInterop": true,
-        "strictNullChecks": false
+        "strictNullChecks": false,
+        "baseUrl": "./",
+        "paths": {
+            "@utils": ["./src/utils"]
+        }
     },
     "include": ["src"]
 }

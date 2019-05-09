@@ -3,7 +3,7 @@
  * @author silverbulletlee
  */
 
-import { swap } from '../../../utils';
+import { swap } from '@utils';
 
 export const selectSort = (array: number[]): number[] => {
     for (let i = 0; i < array.length; i++) {

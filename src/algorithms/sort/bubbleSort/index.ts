@@ -2,7 +2,7 @@
  * @file 冒泡排序实现
  * @author silverbulletlee
  */
-import { swap } from '../../../utils';
+import { swap } from '@utils';
 
 export const bubbleSort = (array: number[]): number[] => {
     for (let i = 0; i < array.length - 1; i++) {

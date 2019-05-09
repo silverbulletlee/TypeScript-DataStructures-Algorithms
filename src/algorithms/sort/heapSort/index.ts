@@ -3,7 +3,7 @@
  * @author silverbulletlee
  */
 
-import { swap } from '../../../utils';
+import { swap } from '@utils';
 
 const getLeftIndex = (index: number): number => (index * 2 + 1);
 const getRightIndex = (index: number): number => ((index + 1) * 2);
