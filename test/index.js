@@ -1,4 +1,4 @@
-import { dataStructor, sort, dynamicPrograming } from '../src';
+import { dataStructor, sort, dynamicPrograming, search } from '../src';
 
 const {
     Stack,
@@ -19,6 +19,11 @@ const {
     fibonacci,
     LCS
 } = dynamicPrograming;
+
+const {
+    binarySearch
+} = search;
+
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
 
 // Stack 使用用例
@@ -100,3 +105,7 @@ console.log('fibonacci', fibonacci(20));
 // 最长公共子序列
 console.log('LCS', LCS('educational', 'advantage'));
 console.log('LCS', LCS('didactical', 'advantage'));
+
+
+// 二分查找
+console.log('binarySearch', binarySearch(quickSort(Array.from(arr)), 5));
