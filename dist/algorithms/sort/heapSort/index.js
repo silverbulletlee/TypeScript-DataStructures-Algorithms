@@ -4,7 +4,7 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("../../../utils");
+const _utils_1 = require("@utils");
 const getLeftIndex = (index) => (index * 2 + 1);
 const getRightIndex = (index) => ((index + 1) * 2);
 const getParentIndex = (index) => ((index - 1) >> 1);
@@ -24,7 +24,7 @@ const buildMaxHeap = (array, index, heapSize) => {
     // 只有左节点
     if (leftIndex <= heapSize && heapSize < rightIndex) {
         if (array[index] < array[leftIndex]) {
-            utils_1.swap(array, index, leftIndex);
+            _utils_1.swap(array, index, leftIndex);
             buildMaxHeap(array, leftIndex, heapSize);
         }
     }
@@ -32,7 +32,7 @@ const buildMaxHeap = (array, index, heapSize) => {
     if (rightIndex <= heapSize) {
         let maxIndex = (array[leftIndex] < array[rightIndex]) ? rightIndex : leftIndex;
         if (array[index] < array[maxIndex]) {
-            utils_1.swap(array, index, maxIndex);
+            _utils_1.swap(array, index, maxIndex);
             buildMaxHeap(array, maxIndex, heapSize);
         }
     }
@@ -42,7 +42,7 @@ exports.heapSort = (array) => {
     heapify(array);
     for (let i = array.length - 1; i > 0; i--) {
         // 最大堆堆定元素一直最大
-        utils_1.swap(array, 0, i);
+        _utils_1.swap(array, 0, i);
         // 重新建堆 将最大元素调整到堆顶
         buildMaxHeap(array, 0, i - 1);
     }

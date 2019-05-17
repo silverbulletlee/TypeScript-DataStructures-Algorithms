@@ -4,7 +4,7 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("../../../utils");
+const _utils_1 = require("@utils");
 exports.selectSort = (array) => {
     for (let i = 0; i < array.length; i++) {
         let minIndex = i;
@@ -14,7 +14,7 @@ exports.selectSort = (array) => {
             }
         }
         if (minIndex !== i) {
-            utils_1.swap(array, minIndex, i);
+            _utils_1.swap(array, minIndex, i);
         }
     }
     return array;

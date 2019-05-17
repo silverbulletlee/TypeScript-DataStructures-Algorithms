@@ -13,3 +13,5 @@ const sort = __importStar(require("./algorithms/sort"));
 exports.sort = sort;
 const dynamicPrograming = __importStar(require("./algorithms/dynamicPrograming"));
 exports.dynamicPrograming = dynamicPrograming;
+const search = __importStar(require("./algorithms/search"));
+exports.search = search;

@@ -4,16 +4,7 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const utils_1 = require("../../../utils");
-// 仅做理解快排思想，要是使用的话数据量大的时候会爆栈·····
-const quickSortRec = (array) => (array.length <= 1
-    ? array
-    : quickSortRec(array
-        .slice(1)
-        .filter(num => num <= array[0]))
-        .concat(array[0], quickSortRec(array
-        .slice(1)
-        .filter(num => num > array[0]))));
+const _utils_1 = require("@utils");
 exports.quickSort = (array, start = 0, end = (array.length - 1)) => {
     if (start >= end) {
         return;
@@ -25,7 +16,7 @@ exports.quickSort = (array, start = 0, end = (array.length - 1)) => {
     while (i < j) {
         while (i < j) {
             if (array[j] < pivot) {
-                utils_1.swap(array, j, pivotIndex);
+                _utils_1.swap(array, j, pivotIndex);
                 pivotIndex = j;
                 break;
             }
@@ -33,7 +24,7 @@ exports.quickSort = (array, start = 0, end = (array.length - 1)) => {
         }
         while (i < j) {
             if (array[i] > pivot) {
-                utils_1.swap(array, i, pivotIndex);
+                _utils_1.swap(array, i, pivotIndex);
                 pivotIndex = i;
                 break;
             }
