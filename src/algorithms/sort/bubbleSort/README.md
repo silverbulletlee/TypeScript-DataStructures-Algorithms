@@ -49,13 +49,13 @@ const bubbleSort = (array: number[]): number[] => {
 };
 ```
 
-优化实现2：记录最后交换元素的位置，缩短下一次冒泡的终点。
+优化实现2：记录最后交换元素的位置，不断缩短下一次冒泡的终点。
 
 ```
 const bubbleSort = (array: number[]): number[] => {
-    let length = array.length;
+    let length: number = array.length;
     
-    while (length) {
+    while (length > 1) {
         let lastSwapPos = 0;
         for (let i = 1; i < length; i++) {
             if (array[i - 1] > array[i]) {

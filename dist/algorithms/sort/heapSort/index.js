@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const _utils_1 = require("@utils");
 const getLeftIndex = (index) => (index * 2 + 1);
 const getRightIndex = (index) => ((index + 1) * 2);
-const getParentIndex = (index) => ((index - 1) >> 1);
+const getParentIndex = (index) => ((index - 1) >>> 1);
 const heapify = (array) => {
     let lastTreePos = getParentIndex(array.length - 1);
     for (let i = lastTreePos; i >= 0; i--) {

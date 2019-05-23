@@ -18,7 +18,7 @@ const binarySearch = (array: number[], target: number, start: number = 0, end: n
         return -1;
     }
 
-    let mid = (start + end) >> 1;
+    let mid = start + ((end - start) >>> 1);
 
     if (array[mid] === target) {
         return mid;

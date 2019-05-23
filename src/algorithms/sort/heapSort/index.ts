@@ -7,7 +7,7 @@ import { swap } from '@utils';
 
 const getLeftIndex = (index: number): number => (index * 2 + 1);
 const getRightIndex = (index: number): number => ((index + 1) * 2);
-const getParentIndex = (index: number): number => ((index - 1) >> 1);
+const getParentIndex = (index: number): number => ((index - 1) >>> 1);
 
 const heapify = (array: number[]): void => {
     let lastTreePos = getParentIndex(array.length - 1);

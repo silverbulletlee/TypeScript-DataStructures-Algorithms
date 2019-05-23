@@ -8,7 +8,7 @@ export const binarySearch = (array: number[], target: number): number => {
     let end = array.length - 1;
 
     while (start <= end) {
-        let mid = (start + end) >> 1;
+        let mid = start + ((end - start) >>> 1);
 
         if (array[mid] === target) {
             return mid;
