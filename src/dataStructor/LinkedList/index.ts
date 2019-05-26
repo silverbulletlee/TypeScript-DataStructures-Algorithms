@@ -5,34 +5,54 @@
 import { ListNode, listNodeType } from './ListNode';
 
 export class LinkedList {
-    private length: number = 0;
+    private _size: number = 0;
     private head: listNodeType = null;
 
+    isEmpty(): boolean {
+        return this._size === 0;
+    }
+    size(): number {
+        return this._size;
+    }
+    indexOf (val: any): number {
+        var cur = this.head;
+        var index = 0;
+
+        while (cur) {
+            if (cur.val === val) {
+                return index;
+            }
+
+            cur = cur.next;
+            index++;
+        }
+        return -1;
+    }
+    getHead(): listNodeType {
+        return this.head;
+    }
     append(val: any): number {
         let listNode: listNodeType = new ListNode(val);
-        let cur: listNodeType = null;
+        let cur: listNodeType = this.head;
 
         if (this.head === null) {
             this.head = listNode;
         } else {
-            cur = this.head;
-
             while (cur.next !== null) {
                 cur = cur.next;
             }
-
             cur.next = listNode;
         }
 
-        return ++this.length;
+        return ++this._size;
     }
     removeAt(pos: number): any {
         if (this.head === null) {
-            throw new Error('Uncaught ReferenceError: 链表为空,不能进行移除操作');
+            return;
         }
 
-        if (pos < 0 || this.length < pos) {
-            throw new Error('Uncaught RangeError: 超出有效范围');
+        if (pos < 0 || this._size < pos) {
+            return;
         }
 
         let index: number = 0;
@@ -51,61 +71,40 @@ export class LinkedList {
             pre.next = cur.next;
         }   
 
-        this.length--;
+        this._size--;
 
         return cur.val;
-    }
-    isEmpty(): boolean {
-        return this.length === 0;
-    }
-    size(): number {
-        return this.length;
-    }
-    indexOf (val: any): number {
-        var cur = this.head;
-        var index = 0;
-
-        while (cur) {
-            if (cur.val === val) {
-                return index;
-            }
-
-            cur = cur.next;
-            index++;
-        }
-        return -1;
     }
     remove(val: any): listNodeType {
         return this.removeAt(this.indexOf(val));
     }
-    getHead(): listNodeType {
-        return this.head;
-    }
     insert(pos: number, val: any): boolean {
-        if (pos < 0 || this.length < pos) {
+        if (pos < 0 || this._size < pos) {
             return false;
         }
 
+        if (pos === this._size) {
+            this.append(val);
+            return true;
+        }
+
         let listNode: listNodeType = new ListNode(val);
-        let index: number = 0;
         let cur: listNodeType = this.head;
-        let pre: listNodeType = cur;
 
         if (pos === 0) {
             listNode.next = cur;
             this.head = listNode;
         } else {
-            while (index++ < pos) {
-                pre = cur;
+            while (--pos) {
                 cur = cur.next;
             }
-            
-            pre.next = listNode;
-            listNode.next = pre;
+            let next = cur.next;
+            cur.next = listNode;
+            listNode.next = next;
             
         }
 
-        this.length++;
+        this._size++;
 
         return true;
     }

@@ -4,15 +4,15 @@
  */
 import { listNodeType } from './ListNode';
 export declare class LinkedList {
-    private length;
+    private _size;
     private head;
-    append(val: any): number;
-    removeAt(pos: number): any;
     isEmpty(): boolean;
     size(): number;
     indexOf(val: any): number;
-    remove(val: any): listNodeType;
     getHead(): listNodeType;
+    append(val: any): number;
+    removeAt(pos: number): any;
+    remove(val: any): listNodeType;
     insert(pos: number, val: any): boolean;
     toString(): string;
 }

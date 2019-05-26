@@ -9,9 +9,9 @@
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "pretest": "npm install",
+    "predev": "npm install",
     "prebuild": "npm install",
-    "test": "./node_modules/.bin/webpack-dev-server",
+    "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/tsc"
   },
   "repository": {

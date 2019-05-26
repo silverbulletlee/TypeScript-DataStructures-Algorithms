@@ -57,19 +57,30 @@ console.log('queue', queue.size());
 
 // LinkedList 使用用例
 let linkedList = new LinkedList();
-console.log('linkedList', linkedList.isEmpty());
+console.log('linkedList.isEmpty', linkedList.isEmpty());
 linkedList.append(15);
+console.log('linkedList', linkedList);
 linkedList.append(10);
-console.log('linkedList', linkedList.getHead());
+console.log('linkedList', linkedList);
 linkedList.append(11);
-console.log('linkedList', linkedList.size());
-console.log('linkedList', linkedList.isEmpty());
-console.log('linkedList', linkedList.indexOf(10));
-console.log('linkedList', linkedList.remove(10));
+console.log('linkedList.size', linkedList.size());
+console.log('linkedList.isEmpty', linkedList.isEmpty());
+console.log('linkedList.getHead', linkedList.getHead());
+console.log('linkedList.indexOf', linkedList.indexOf(10));
+linkedList.remove(10);
+console.log('linkedList.size', linkedList.size());
+console.log('linkedList.isEmpty', linkedList.isEmpty());
+console.log('linkedList.getHead', linkedList.getHead());
+console.log('linkedList.indexOf', linkedList.indexOf(10));
 linkedList.insert(1, 12);
-console.log('linkedList', linkedList.size());
-console.log('linkedList', linkedList.removeAt(1));
-// console.log('linkedList', linkedList.toString());
+console.log('linkedList.isEmpty', linkedList.isEmpty());
+console.log('linkedList.getHead', linkedList.getHead());
+console.log('linkedList.indexOf', linkedList.indexOf(12));
+linkedList.removeAt(2);
+linkedList.append(76);
+linkedList.append(88);
+console.log('linkedList.size()', linkedList.size());
+console.log('linkedList.toString()', linkedList.toString());
 
 
 console.log(arr);
