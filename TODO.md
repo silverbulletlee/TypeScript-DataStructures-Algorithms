@@ -6,3 +6,4 @@
 - [ ] 增加git hooks自动生成dist
 - [ ] 增加代码检查
 - [ ] 自动生成changelog
+- [ ] 添加测试用例

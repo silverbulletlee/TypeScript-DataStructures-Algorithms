@@ -55,25 +55,23 @@ export class LinkedList {
             return;
         }
 
-        let index: number = 0;
-        let cur: listNodeType = this.head;
-        let pre: listNodeType = cur;
+        let res: listNodeType = null;
 
         if (pos === 0) {
-            this.head = cur.next;
+            res = this.head;
+            this.head = this.head.next;
         } else {
-
-            while (index++ < pos) {
-                pre = cur;
+            let cur: listNodeType = this.head;
+            while (--pos) {
                 cur = cur.next;
             }
-
-            pre.next = cur.next;
+            res = cur.next;
+            cur.next = cur.next.next;
         }   
 
         this._size--;
 
-        return cur.val;
+        return res.val;
     }
     remove(val: any): listNodeType {
         return this.removeAt(this.indexOf(val));

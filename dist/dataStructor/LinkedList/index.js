@@ -52,21 +52,21 @@ class LinkedList {
         if (pos < 0 || this._size < pos) {
             return;
         }
-        let index = 0;
-        let cur = this.head;
-        let pre = cur;
+        let res = null;
         if (pos === 0) {
-            this.head = cur.next;
+            res = this.head;
+            this.head = this.head.next;
         }
         else {
-            while (index++ < pos) {
-                pre = cur;
+            let cur = this.head;
+            while (--pos) {
                 cur = cur.next;
             }
-            pre.next = cur.next;
+            res = cur.next;
+            cur.next = cur.next.next;
         }
         this._size--;
-        return cur.val;
+        return res.val;
     }
     remove(val) {
         return this.removeAt(this.indexOf(val));
