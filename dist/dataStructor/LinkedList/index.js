@@ -34,7 +34,7 @@ class LinkedList {
     append(val) {
         let listNode = new ListNode_1.ListNode(val);
         let cur = this.head;
-        if (this.head === null) {
+        if (this.isEmpty()) {
             this.head = listNode;
         }
         else {
@@ -46,10 +46,7 @@ class LinkedList {
         return ++this._size;
     }
     removeAt(pos) {
-        if (this.head === null) {
-            return;
-        }
-        if (pos < 0 || this._size < pos) {
+        if (this.isEmpty() || pos < 0 || this.size() < pos) {
             return;
         }
         let res = null;
@@ -72,10 +69,10 @@ class LinkedList {
         return this.removeAt(this.indexOf(val));
     }
     insert(pos, val) {
-        if (pos < 0 || this._size < pos) {
+        if (pos < 0 || this.size() < pos) {
             return false;
         }
-        if (pos === this._size) {
+        if (pos === this.size()) {
             this.append(val);
             return true;
         }
@@ -96,14 +93,14 @@ class LinkedList {
         this._size++;
         return true;
     }
-    toString() {
+    toString(separator = '->') {
         let res = [];
         let cur = this.head;
         while (cur) {
             res.push(cur.val);
             cur = cur.next;
         }
-        return res.join(' -> ');
+        return res.join(separator);
     }
 }
 exports.LinkedList = LinkedList;

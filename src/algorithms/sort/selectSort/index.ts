@@ -8,7 +8,7 @@ import { swap } from '@utils';
 export const selectSort = (array: number[]): number[] => {
     for (let i = 0; i < array.length; i++) {
         let minIndex = i;
-        for (let j = i; j < array.length; j++) {
+        for (let j = i + 1; j < array.length; j++) {
             if (array[j] < array[minIndex]) {
                 minIndex = j;
             }

@@ -6,3 +6,5 @@ const Queue_1 = require("./Queue");
 exports.Queue = Queue_1.Queue;
 const LinkedList_1 = require("./LinkedList");
 exports.LinkedList = LinkedList_1.LinkedList;
+const DoublyLinkedList_1 = require("./DoublyLinkedList");
+exports.DoublyLinkedList = DoublyLinkedList_1.DoublyLinkedList;

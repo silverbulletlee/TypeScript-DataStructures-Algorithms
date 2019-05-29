@@ -5,8 +5,8 @@
 import { ListNode, listNodeType } from './ListNode';
 
 export class LinkedList {
-    private _size: number = 0;
-    private head: listNodeType = null;
+    protected _size: number = 0;
+    protected head: listNodeType = null;
 
     isEmpty(): boolean {
         return this._size === 0;
@@ -35,7 +35,7 @@ export class LinkedList {
         let listNode: listNodeType = new ListNode(val);
         let cur: listNodeType = this.head;
 
-        if (this.head === null) {
+        if (this.isEmpty()) {
             this.head = listNode;
         } else {
             while (cur.next !== null) {
@@ -47,11 +47,7 @@ export class LinkedList {
         return ++this._size;
     }
     removeAt(pos: number): any {
-        if (this.head === null) {
-            return;
-        }
-
-        if (pos < 0 || this._size < pos) {
+        if (this.isEmpty() || pos < 0 || this.size() < pos) {
             return;
         }
 
@@ -77,11 +73,11 @@ export class LinkedList {
         return this.removeAt(this.indexOf(val));
     }
     insert(pos: number, val: any): boolean {
-        if (pos < 0 || this._size < pos) {
+        if (pos < 0 || this.size() < pos) {
             return false;
         }
 
-        if (pos === this._size) {
+        if (pos === this.size()) {
             this.append(val);
             return true;
         }
@@ -106,7 +102,7 @@ export class LinkedList {
 
         return true;
     }
-    toString(): string {
+    toString(separator: string = '->'): string {
         let res: any[] = [];
         let cur: listNodeType = this.head;
 
@@ -115,6 +111,6 @@ export class LinkedList {
             cur = cur.next;
         }
 
-        return res.join(' -> ');
+        return res.join(separator);
     }
 }

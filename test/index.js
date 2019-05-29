@@ -3,7 +3,8 @@ import { dataStructor, sort, dynamicPrograming, search } from '../src';
 const {
     Stack,
     Queue,
-    LinkedList
+    LinkedList,
+    DoublyLinkedList
 } = dataStructor;
 
 const {
@@ -82,6 +83,55 @@ linkedList.append(88);
 console.log('linkedList.size()', linkedList.size());
 console.log('linkedList.toString()', linkedList.toString());
 
+// 双向链表
+let doublyLinkedList = new DoublyLinkedList();
+doublyLinkedList.append(15);
+console.log('doublyLinkedList', doublyLinkedList);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+
+doublyLinkedList.append(10);
+console.log('doublyLinkedList', doublyLinkedList);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+
+doublyLinkedList.append(11);
+console.log('doublyLinkedList.size', doublyLinkedList.size());
+console.log('doublyLinkedList.isEmpty', doublyLinkedList.isEmpty());
+console.log('doublyLinkedList.getHead', doublyLinkedList.getHead());
+console.log('doublyLinkedList.getTail', doublyLinkedList.getTail());
+console.log('doublyLinkedList.indexOf', doublyLinkedList.indexOf(10));
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+
+doublyLinkedList.removeAt(1);
+console.log('doublyLinkedList.size', doublyLinkedList.size());
+console.log('doublyLinkedList.isEmpty', doublyLinkedList.isEmpty());
+console.log('doublyLinkedList.getHead', doublyLinkedList.getHead());
+console.log('doublyLinkedList.getTail', doublyLinkedList.getTail());
+console.log('doublyLinkedList.indexOf', doublyLinkedList.indexOf(10));
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+
+doublyLinkedList.append(18);
+console.log('doublyLinkedList.size', doublyLinkedList.size());
+console.log('doublyLinkedList.isEmpty', doublyLinkedList.isEmpty());
+console.log('doublyLinkedList.getHead', doublyLinkedList.getHead());
+console.log('doublyLinkedList.getTail', doublyLinkedList.getTail());
+console.log('doublyLinkedList.indexOf', doublyLinkedList.indexOf(10));
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+doublyLinkedList.remove(11);
+console.log('doublyLinkedList.size', doublyLinkedList.size());
+console.log('doublyLinkedList.isEmpty', doublyLinkedList.isEmpty());
+console.log('doublyLinkedList.getHead', doublyLinkedList.getHead());
+console.log('doublyLinkedList.getTail', doublyLinkedList.getTail());
+console.log('doublyLinkedList.indexOf', doublyLinkedList.indexOf(10));
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+doublyLinkedList.insert(1, 6);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+doublyLinkedList.insert(0, 8);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+doublyLinkedList.insert(-1, 1);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+doublyLinkedList.insert(19, 6);
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
+console.log('doublyLinkedList.toString()', doublyLinkedList.toString());
 
 console.log(arr);
 
