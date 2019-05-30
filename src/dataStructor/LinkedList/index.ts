@@ -14,9 +14,9 @@ export class LinkedList {
     size(): number {
         return this._size;
     }
-    indexOf (val: any): number {
-        var cur = this.head;
-        var index = 0;
+    indexOf(val: any): number {
+        let cur = this.head;
+        let index = 0;
 
         while (cur) {
             if (cur.val === val) {
@@ -63,7 +63,7 @@ export class LinkedList {
             }
             res = cur.next;
             cur.next = cur.next.next;
-        }   
+        }
 
         this._size--;
 
@@ -95,7 +95,6 @@ export class LinkedList {
             let next = cur.next;
             cur.next = listNode;
             listNode.next = next;
-            
         }
 
         this._size++;

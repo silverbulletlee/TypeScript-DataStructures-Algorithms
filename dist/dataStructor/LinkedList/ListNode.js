@@ -11,4 +11,3 @@ class ListNode {
     }
 }
 exports.ListNode = ListNode;
-;

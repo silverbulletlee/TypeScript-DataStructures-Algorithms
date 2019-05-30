@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const _utils_1 = require("@utils");
-exports.quickSort = (array, start = 0, end = (array.length - 1)) => {
+exports.quickSort = (array, start = 0, end = array.length - 1) => {
     if (start >= end) {
         return;
     }

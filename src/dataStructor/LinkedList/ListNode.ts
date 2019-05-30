@@ -14,4 +14,4 @@ export class ListNode {
     constructor(val: any) {
         this.val = val;
     }
-};
+}

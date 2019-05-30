@@ -5,8 +5,7 @@
 import { DoublyListNode, doublyListNodeType } from './DoublyListNode';
 import { LinkedList } from '../LinkedList';
 
-
-export class DoublyLinkedList extends LinkedList{
+export class DoublyLinkedList extends LinkedList {
     protected head: doublyListNodeType = null;
     protected tail: doublyListNodeType = null;
 
@@ -40,9 +39,8 @@ export class DoublyLinkedList extends LinkedList{
             if (this.head) {
                 this.head.prev = null;
             } else {
-                this.tail = this.head
+                this.tail = this.head;
             }
-
         } else if (pos === this.size() - 1) {
             res = this.tail;
             this.tail = this.tail.prev;
@@ -72,7 +70,7 @@ export class DoublyLinkedList extends LinkedList{
             return true;
         }
         let listNode: doublyListNodeType = new DoublyListNode(val);
-        
+
         if (pos === 0) {
             listNode.next = this.head;
             this.head && (this.head.prev = listNode);

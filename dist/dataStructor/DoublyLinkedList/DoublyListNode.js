@@ -13,4 +13,3 @@ class DoublyListNode extends ListNode_1.ListNode {
     }
 }
 exports.DoublyListNode = DoublyListNode;
-;

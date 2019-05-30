@@ -1,6 +1,3 @@
 import { binarySearch } from './binarySearch';
 
-
-export {
-    binarySearch,
-};
+export { binarySearch };

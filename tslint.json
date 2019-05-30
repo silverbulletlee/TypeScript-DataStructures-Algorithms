@@ -1,0 +1,67 @@
+{
+    "extends": [
+      "tslint:recommended",
+      "tslint-config-prettier",
+      "tslint-eslint-rules"
+    ],
+    "rules": {
+        "prefer-const": false,
+        "array-type": false,
+        "no-bitwise": false,
+        "ordered-imports": false,
+        "member-access": false,
+        "variable-name": [
+            true,
+            "allow-leading-underscore"
+        ],
+        "no-unused-expression": [
+            true,
+            "allow-fast-null-checks"
+        ],
+        "no-trailing-whitespace": [
+            true,
+            "ignore-comments",
+            "ignore-jsdoc"
+        ],
+        "semicolon": [
+            true,
+            "always"
+        ],
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "eofline": true,
+        "typedef-whitespace": [
+            true,
+            {
+                "call-signature": "nospace",
+                "index-signature": "nospace",
+                "parameter": "nospace",
+                "property-declaration": "nospace",
+                "variable-declaration": "nospace"
+            },
+            {
+                "call-signature": "onespace",
+                "index-signature": "onespace",
+                "parameter": "onespace",
+                "property-declaration": "onespace",
+                "variable-declaration": "onespace"
+            }
+        ],
+        "whitespace": [
+            true,
+            "check-branch",
+            "check-decl",
+            "check-operator",
+            "check-module",
+            "check-separator",
+            "check-rest-spread",
+            "check-type",
+            "check-typecast",
+            "check-type-operator",
+            "check-preblock"
+        ]
+    }
+}
+  

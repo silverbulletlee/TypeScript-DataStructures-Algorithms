@@ -7,9 +7,7 @@ const merge = (left: number[], right: number[]): number[] => {
     let res = [];
 
     while (left.length && right.length) {
-        left[0] <= right[0]
-        ? res.push(left.shift())
-        : res.push(right.shift());
+        left[0] <= right[0] ? res.push(left.shift()) : res.push(right.shift());
     }
 
     return res.concat(left, right);

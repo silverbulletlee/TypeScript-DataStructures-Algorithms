@@ -32,4 +32,4 @@ export class Queue {
     print(): string {
         return JSON.stringify(this.queue);
     }
-};
+}

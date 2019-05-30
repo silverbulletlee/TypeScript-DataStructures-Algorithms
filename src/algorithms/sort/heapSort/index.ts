@@ -5,9 +5,9 @@
 
 import { swap } from '@utils';
 
-const getLeftIndex = (index: number): number => (index * 2 + 1);
-const getRightIndex = (index: number): number => ((index + 1) * 2);
-const getParentIndex = (index: number): number => ((index - 1) >>> 1);
+const getLeftIndex = (index: number): number => index * 2 + 1;
+const getRightIndex = (index: number): number => (index + 1) * 2;
+const getParentIndex = (index: number): number => (index - 1) >>> 1;
 
 const heapify = (array: number[]): void => {
     let lastTreePos = getParentIndex(array.length - 1);
@@ -19,26 +19,25 @@ const heapify = (array: number[]): void => {
 const buildMaxHeap = (array: number[], index: number, heapSize: number): void => {
     let leftIndex = getLeftIndex(index);
     let rightIndex = getRightIndex(index);
-
     // 没有子节点，因为堆是完全二叉树没有左节点必然没有右节点
     if (heapSize < leftIndex) {
         return;
     }
     // 只有左节点
     if (leftIndex <= heapSize && heapSize < rightIndex) {
-        if(array[index] < array[leftIndex]) {
+        if (array[index] < array[leftIndex]) {
             swap(array, index, leftIndex);
             buildMaxHeap(array, leftIndex, heapSize);
         }
     }
     // 存在两个节点
     if (rightIndex <= heapSize) {
-        let maxIndex = (array[leftIndex] < array[rightIndex])? rightIndex : leftIndex;
+        let maxIndex = array[leftIndex] < array[rightIndex] ? rightIndex : leftIndex;
 
         if (array[index] < array[maxIndex]) {
             swap(array, index, maxIndex);
             buildMaxHeap(array, maxIndex, heapSize);
-        } 
+        }
     }
 };
 

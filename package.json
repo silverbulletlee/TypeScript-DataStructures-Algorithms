@@ -11,8 +11,12 @@
   "scripts": {
     "predev": "npm install",
     "prebuild": "npm install",
+    "prelint": "npm install",
+    "preformat": "npm install",
     "dev": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/tsc"
+    "build": "./node_modules/.bin/tsc",
+    "lint": "./node_modules/.bin/tslint -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -29,7 +33,11 @@
     "address": "^1.0.3",
     "html-webpack-plugin": "^3.2.0",
     "opn": "^6.0.0",
+    "prettier": "^1.17.1",
     "ts-loader": "^5.3.3",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.4.3",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",

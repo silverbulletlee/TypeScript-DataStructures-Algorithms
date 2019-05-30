@@ -37,4 +37,3 @@ class Queue {
     }
 }
 exports.Queue = Queue;
-;

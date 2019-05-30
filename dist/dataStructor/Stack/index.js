@@ -37,4 +37,3 @@ class Stack {
     }
 }
 exports.Stack = Stack;
-;

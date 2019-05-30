@@ -32,4 +32,4 @@ export class Stack {
     print(): string {
         return JSON.stringify(this.stack);
     }
-};
+}

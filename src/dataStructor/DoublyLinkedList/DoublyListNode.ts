@@ -16,4 +16,4 @@ export class DoublyListNode extends ListNode {
     constructor(val: any) {
         super(val);
     }
-};
+}

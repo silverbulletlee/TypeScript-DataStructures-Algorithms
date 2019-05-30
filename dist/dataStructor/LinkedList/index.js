@@ -17,8 +17,8 @@ class LinkedList {
         return this._size;
     }
     indexOf(val) {
-        var cur = this.head;
-        var index = 0;
+        let cur = this.head;
+        let index = 0;
         while (cur) {
             if (cur.val === val) {
                 return index;

@@ -3,13 +3,12 @@
  * @author silverbulletlee
  */
 
-import { swap } from "@utils";
+import { swap } from '@utils';
 
-export const quickSort = (array: number[], start: number = 0, end: number = (array.length - 1)): number[] => {
+export const quickSort = (array: number[], start: number = 0, end: number = array.length - 1): number[] => {
     if (start >= end) {
         return;
     }
-
     let i = start;
     let j = end;
 
