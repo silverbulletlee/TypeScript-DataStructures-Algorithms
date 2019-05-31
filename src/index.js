@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var dataStructor = require("./dataStructor");
+exports.dataStructor = dataStructor;
+var sort = require("./algorithms/sort");
+exports.sort = sort;
+var dynamicPrograming = require("./algorithms/dynamicPrograming");
+exports.dynamicPrograming = dynamicPrograming;
+var search = require("./algorithms/search");
+exports.search = search;
+var a = function () { return 1; };
+exports.a = a;

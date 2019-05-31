@@ -9,14 +9,10 @@
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "predev": "npm install",
-    "prebuild": "npm install",
-    "prelint": "npm install",
-    "preformat": "npm install",
     "dev": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/tsc",
+    "build": "./node_modules/.bin/tsc -p tsconfig.json",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json",
-    "format": "prettier --write \"src/**/*.ts\""
+    "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -41,6 +37,21 @@
     "typescript": "^3.4.3",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./": [
+      "npm run format",
+      "npm run lint",
+      "npm run build",
+      "git add"
+    ]
   }
 }

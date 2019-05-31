@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var Stack_1 = require("./Stack");
+exports.Stack = Stack_1.Stack;
+var Queue_1 = require("./Queue");
+exports.Queue = Queue_1.Queue;
+var LinkedList_1 = require("./LinkedList");
+exports.LinkedList = LinkedList_1.LinkedList;
+var DoublyLinkedList_1 = require("./DoublyLinkedList");
+exports.DoublyLinkedList = DoublyLinkedList_1.DoublyLinkedList;
