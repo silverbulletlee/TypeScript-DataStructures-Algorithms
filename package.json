@@ -10,7 +10,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "dev": "./node_modules/.bin/webpack-dev-server",
-    "build": "./node_modules/.bin/tsc -p tsconfig.json",
+    "build": "./node_modules/.bin/tsc",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json",
     "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\""
   },
@@ -43,14 +43,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run build && git add ./dist"
     }
   },
   "lint-staged": {
-    "./": [
+    "src/**/*.ts": [
       "npm run format",
       "npm run lint",
-      "npm run build",
       "git add"
     ]
   }
