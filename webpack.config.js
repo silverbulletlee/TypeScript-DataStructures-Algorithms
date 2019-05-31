@@ -13,7 +13,7 @@ const ipv4 = address.ip() || '127.0.0.1';
 const port = 3000;
 
 module.exports = {
-    entry: './test/index.js',
+    entry: './dev/index.js',
     output: {
         path: path.resolve(__dirname, 'output'),
         filename: 'index_[hash:8].js'
