@@ -10,7 +10,7 @@ class Queue {
     }
     dequeue() {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
         return this.queue.shift();
     }
@@ -25,7 +25,7 @@ class Queue {
     }
     front() {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
         return this.queue[0];
     }

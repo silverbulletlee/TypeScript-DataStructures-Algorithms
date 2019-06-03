@@ -3,15 +3,15 @@
  * @author silverbulletlee
  */
 
-export class Queue {
-    private queue: any[] = [];
-    dequeue(): any {
+export class Queue<T> {
+    private queue: T[] = [];
+    dequeue(): T | void {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
         return this.queue.shift();
     }
-    enqueue(ele: any): number {
+    enqueue(ele: T): number {
         return this.queue.push(ele);
     }
     size(): number {
@@ -20,9 +20,9 @@ export class Queue {
     isEmpty(): boolean {
         return this.queue.length === 0;
     }
-    front(): any {
+    front(): T {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
         return this.queue[0];
     }

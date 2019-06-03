@@ -3,15 +3,15 @@
  * @author silverbulletlee
  */
 
-export type listNodeType = {
-    val: any;
-    next: listNodeType;
+export type listNodeType<T> = {
+    val: T;
+    next: listNodeType<T>;
 } | null;
 
-export class ListNode {
-    public val: any;
-    public next: listNodeType = null;
-    constructor(val: any) {
+export class ListNode<T> {
+    public val: T;
+    public next: listNodeType<T> = null;
+    constructor(val: T) {
         this.val = val;
     }
 }

@@ -2,13 +2,13 @@
  * @file Queue 类实现
  * @author silverbulletlee
  */
-export declare class Queue {
+export declare class Queue<T> {
     private queue;
-    dequeue(): any;
-    enqueue(ele: any): number;
+    dequeue(): T | void;
+    enqueue(ele: T): number;
     size(): number;
     isEmpty(): boolean;
-    front(): any;
+    front(): T;
     clear(): void;
     print(): string;
 }

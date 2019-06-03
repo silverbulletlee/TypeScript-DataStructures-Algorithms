@@ -8,26 +8,26 @@ class Stack {
     constructor() {
         this.stack = [];
     }
-    pop() {
-        if (this.isEmpty()) {
-            return undefined;
-        }
-        return this.stack.pop();
-    }
-    push(ele) {
-        return this.stack.push(ele);
-    }
     size() {
         return this.stack.length;
     }
     isEmpty() {
-        return this.stack.length === 0;
+        return this.size() === 0;
     }
     peek() {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
-        return this.stack[this.stack.length - 1];
+        return this.stack[this.size() - 1];
+    }
+    push(ele) {
+        return this.stack.push(ele);
+    }
+    pop() {
+        if (this.isEmpty()) {
+            return;
+        }
+        return this.stack.pop();
     }
     clear() {
         this.stack.length = 0;

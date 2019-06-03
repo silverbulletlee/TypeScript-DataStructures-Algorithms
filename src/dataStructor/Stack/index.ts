@@ -3,28 +3,28 @@
  * @author silverbulletlee
  */
 
-export class Stack {
-    private stack: any[] = [];
-    pop(): any {
-        if (this.isEmpty()) {
-            return undefined;
-        }
-        return this.stack.pop();
-    }
-    push(ele: any): number {
-        return this.stack.push(ele);
-    }
+export class Stack<T> {
+    private stack: T[] = [];
     size(): number {
         return this.stack.length;
     }
     isEmpty(): boolean {
-        return this.stack.length === 0;
+        return this.size() === 0;
     }
-    peek(): any {
+    peek(): T | void {
         if (this.isEmpty()) {
-            return undefined;
+            return;
         }
-        return this.stack[this.stack.length - 1];
+        return this.stack[this.size() - 1];
+    }
+    push(ele: T): number {
+        return this.stack.push(ele);
+    }
+    pop(): T | void {
+        if (this.isEmpty()) {
+            return;
+        }
+        return this.stack.pop();
     }
     clear(): void {
         this.stack.length = 0;

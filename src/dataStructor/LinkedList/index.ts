@@ -4,9 +4,9 @@
  */
 import { ListNode, listNodeType } from './ListNode';
 
-export class LinkedList {
+export class LinkedList<T> {
     protected _size: number = 0;
-    protected head: listNodeType = null;
+    protected head: listNodeType<T> = null;
 
     isEmpty(): boolean {
         return this._size === 0;
@@ -14,7 +14,7 @@ export class LinkedList {
     size(): number {
         return this._size;
     }
-    indexOf(val: any): number {
+    indexOf(val: T): number {
         let cur = this.head;
         let index = 0;
 
@@ -28,12 +28,12 @@ export class LinkedList {
         }
         return -1;
     }
-    getHead(): listNodeType {
+    getHead(): listNodeType<T> {
         return this.head;
     }
-    append(val: any): number {
-        let listNode: listNodeType = new ListNode(val);
-        let cur: listNodeType = this.head;
+    append(val: T): number {
+        let listNode: listNodeType<T> = new ListNode(val);
+        let cur: listNodeType<T> = this.head;
 
         if (this.isEmpty()) {
             this.head = listNode;
@@ -46,18 +46,18 @@ export class LinkedList {
 
         return ++this._size;
     }
-    removeAt(pos: number): any {
+    removeAt(pos: number): T | void {
         if (this.isEmpty() || pos < 0 || this.size() < pos) {
             return;
         }
 
-        let res: listNodeType = null;
+        let res: listNodeType<T> = null;
 
         if (pos === 0) {
             res = this.head;
             this.head = this.head.next;
         } else {
-            let cur: listNodeType = this.head;
+            let cur: listNodeType<T> = this.head;
             while (--pos) {
                 cur = cur.next;
             }
@@ -69,10 +69,10 @@ export class LinkedList {
 
         return res.val;
     }
-    remove(val: any): listNodeType {
+    remove(val: T): T | void {
         return this.removeAt(this.indexOf(val));
     }
-    insert(pos: number, val: any): boolean {
+    insert(pos: number, val: T): boolean {
         if (pos < 0 || this.size() < pos) {
             return false;
         }
@@ -82,8 +82,8 @@ export class LinkedList {
             return true;
         }
 
-        let listNode: listNodeType = new ListNode(val);
-        let cur: listNodeType = this.head;
+        let listNode: listNodeType<T> = new ListNode(val);
+        let cur: listNodeType<T> = this.head;
 
         if (pos === 0) {
             listNode.next = cur;
@@ -103,7 +103,7 @@ export class LinkedList {
     }
     toString(separator: string = '->'): string {
         let res: any[] = [];
-        let cur: listNodeType = this.head;
+        let cur: listNodeType<T> = this.head;
 
         while (cur) {
             res.push(cur.val);

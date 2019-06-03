@@ -3,16 +3,16 @@
  * @author silverbulletlee
  */
 import { listNodeType } from './ListNode';
-export declare class LinkedList {
+export declare class LinkedList<T> {
     protected _size: number;
-    protected head: listNodeType;
+    protected head: listNodeType<T>;
     isEmpty(): boolean;
     size(): number;
-    indexOf(val: any): number;
-    getHead(): listNodeType;
-    append(val: any): number;
-    removeAt(pos: number): any;
-    remove(val: any): listNodeType;
-    insert(pos: number, val: any): boolean;
+    indexOf(val: T): number;
+    getHead(): listNodeType<T>;
+    append(val: T): number;
+    removeAt(pos: number): T | void;
+    remove(val: T): T | void;
+    insert(pos: number, val: T): boolean;
     toString(separator?: string): string;
 }

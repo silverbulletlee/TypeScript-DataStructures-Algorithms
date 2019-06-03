@@ -5,15 +5,15 @@
 import { DoublyListNode, doublyListNodeType } from './DoublyListNode';
 import { LinkedList } from '../LinkedList';
 
-export class DoublyLinkedList extends LinkedList {
-    protected head: doublyListNodeType = null;
-    protected tail: doublyListNodeType = null;
+export class DoublyLinkedList<T> extends LinkedList<T> {
+    protected head: doublyListNodeType<T> = null;
+    protected tail: doublyListNodeType<T> = null;
 
-    getTail(): doublyListNodeType {
+    getTail(): doublyListNodeType<T> {
         return this.tail;
     }
-    append(val: any): number {
-        let listNode: doublyListNodeType = new DoublyListNode(val);
+    append(val: T): number {
+        let listNode: doublyListNodeType<T> = new DoublyListNode(val);
 
         if (this.isEmpty()) {
             this.head = listNode;
@@ -26,12 +26,12 @@ export class DoublyLinkedList extends LinkedList {
 
         return ++this._size;
     }
-    removeAt(pos: number): any {
+    removeAt(pos: number): T | void {
         if (this.isEmpty() || pos < 0 || this.size() < pos) {
             return;
         }
 
-        let res: doublyListNodeType = null;
+        let res: doublyListNodeType<T> = null;
 
         if (pos === 0) {
             res = this.head;
@@ -46,7 +46,7 @@ export class DoublyLinkedList extends LinkedList {
             this.tail = this.tail.prev;
             this.tail.next = null;
         } else {
-            let cur: doublyListNodeType = this.head;
+            let cur: doublyListNodeType<T> = this.head;
             while (--pos) {
                 cur = cur.next;
             }
@@ -61,7 +61,7 @@ export class DoublyLinkedList extends LinkedList {
 
         return res.val;
     }
-    insert(pos: number, val: any): boolean {
+    insert(pos: number, val: T): boolean {
         if (pos < 0 || this.size() < pos) {
             return false;
         }
@@ -69,14 +69,14 @@ export class DoublyLinkedList extends LinkedList {
             this.append(val);
             return true;
         }
-        let listNode: doublyListNodeType = new DoublyListNode(val);
+        let listNode: doublyListNodeType<T> = new DoublyListNode(val);
 
         if (pos === 0) {
             listNode.next = this.head;
             this.head && (this.head.prev = listNode);
             this.head = listNode;
         } else {
-            let cur: doublyListNodeType = this.head;
+            let cur: doublyListNodeType<T> = this.head;
             while (--pos) {
                 cur = cur.next;
             }
