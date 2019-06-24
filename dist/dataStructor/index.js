@@ -8,3 +8,5 @@ const LinkedList_1 = require("./LinkedList");
 exports.LinkedList = LinkedList_1.LinkedList;
 const DoublyLinkedList_1 = require("./DoublyLinkedList");
 exports.DoublyLinkedList = DoublyLinkedList_1.DoublyLinkedList;
+const BinarySearchTree_1 = require("./BinarySearchTree");
+exports.BinarySearchTree = BinarySearchTree_1.BinarySearchTree;

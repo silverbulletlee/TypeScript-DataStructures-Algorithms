@@ -5,7 +5,7 @@
 
 export class Queue<T> {
     private queue: T[] = [];
-    dequeue(): T | void {
+    dequeue(): T {
         if (this.isEmpty()) {
             return;
         }

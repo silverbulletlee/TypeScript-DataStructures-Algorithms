@@ -4,7 +4,7 @@
  */
 export declare class Queue<T> {
     private queue;
-    dequeue(): T | void;
+    dequeue(): T;
     enqueue(ele: T): number;
     size(): number;
     isEmpty(): boolean;

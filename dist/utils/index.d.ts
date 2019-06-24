@@ -2,4 +2,11 @@
  * @file 一些通用工具的方法
  * @author silverbulletlee
  */
+export declare type compareFunctionType<T> = (a: T, b: T) => number;
+export declare enum compare {
+    LESS_THAN = -1,
+    EQUAL = 0,
+    BIGGER_THAN = 1
+}
 export declare const swap: (array: number[], i: number, j: number) => void;
+export declare const defaultCompare: <T>(a: T, b: T) => number;

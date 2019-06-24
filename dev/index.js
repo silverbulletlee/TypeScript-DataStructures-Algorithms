@@ -4,7 +4,8 @@ const {
     Stack,
     Queue,
     LinkedList,
-    DoublyLinkedList
+    DoublyLinkedList,
+    BinarySearchTree
 } = dataStructor;
 
 const {
@@ -170,3 +171,21 @@ console.log('LCS', LCS('didactical', 'advantage'));
 
 // 二分查找
 console.log('binarySearch', binarySearch(quickSort(Array.from(arr)), 5));
+
+// 二叉树
+
+let binarySearchTree = new BinarySearchTree();
+binarySearchTree.insertNode(7);
+binarySearchTree.insertNode(15);
+binarySearchTree.insertNode(5);
+binarySearchTree.insertNode(3);
+binarySearchTree.insertNode(9);
+binarySearchTree.insertNode(8);
+binarySearchTree.insertNode(10);
+binarySearchTree.insertNode(13);
+binarySearchTree.insertNode(12);
+binarySearchTree.insertNode(14);
+console.log('binarySearchTree', binarySearchTree);
+console.log('binarySearchTree.preOrderRec', binarySearchTree.preOrderRec());
+console.log('binarySearchTree.inOrderRec', binarySearchTree.inOrderRec());
+console.log('binarySearchTree.inOrderRec', binarySearchTree.postOrder());

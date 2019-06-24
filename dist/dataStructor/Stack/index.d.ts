@@ -6,9 +6,9 @@ export declare class Stack<T> {
     private stack;
     size(): number;
     isEmpty(): boolean;
-    peek(): T | void;
+    peek(): T;
     push(ele: T): number;
-    pop(): T | void;
+    pop(): T;
     clear(): void;
     print(): string;
 }

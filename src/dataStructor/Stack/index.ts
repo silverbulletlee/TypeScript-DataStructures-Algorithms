@@ -11,7 +11,7 @@ export class Stack<T> {
     isEmpty(): boolean {
         return this.size() === 0;
     }
-    peek(): T | void {
+    peek(): T {
         if (this.isEmpty()) {
             return;
         }
@@ -20,7 +20,7 @@ export class Stack<T> {
     push(ele: T): number {
         return this.stack.push(ele);
     }
-    pop(): T | void {
+    pop(): T {
         if (this.isEmpty()) {
             return;
         }
