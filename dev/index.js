@@ -1,4 +1,4 @@
-import { dataStructor, sort, dynamicPrograming, search } from '../src';
+import { dataStructor, sort, dynamicPrograming, search, graph } from '../src';
 
 const {
     Stack,
@@ -26,6 +26,10 @@ const {
 const {
     binarySearch
 } = search;
+
+const {
+    Dijkstra
+} = graph;
 
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
 
@@ -192,39 +196,48 @@ console.log('binarySearchTree.inOrderRec', binarySearchTree.inOrderRec());
 console.log('binarySearchTree.inOrderRec', binarySearchTree.postOrder());
 
 // 图
-let graph = new Graph();
+let graphInstance = new Graph();
 let myVertices=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 for (let i=0; i < myVertices.length; i++){
-    graph.addVertex(myVertices[i]);
+    graphInstance.addVertex(myVertices[i]);
 }
-graph.addEdge('A','B');
-graph.addEdge('A','C');
-graph.addEdge('A','D');
-graph.addEdge('C','D');
-graph.addEdge('C','G');
-graph.addEdge('D','G');
-graph.addEdge('D','H');
-graph.addEdge('B','E');
-graph.addEdge('B','F');
-graph.addEdge('E','I');
-console.log('graph', graph.toString());
-console.log('graph.BFS', graph.BFS());
-console.log('graph.getShortestPath', graph.getShortestPath());
-console.log('graph.DFS', graph.DFS());
-console.log('graph.DFSRec', graph.DFSRec());
+graphInstance.addEdge('A','B');
+graphInstance.addEdge('A','C');
+graphInstance.addEdge('A','D');
+graphInstance.addEdge('C','D');
+graphInstance.addEdge('C','G');
+graphInstance.addEdge('D','G');
+graphInstance.addEdge('D','H');
+graphInstance.addEdge('B','E');
+graphInstance.addEdge('B','F');
+graphInstance.addEdge('E','I');
+console.log('graphInstance', graphInstance.toString());
+console.log('graphInstance.BFS', graphInstance.BFS());
+console.log('graphInstance.getShortestPath', graphInstance.getShortestPath());
+console.log('graphInstance.DFS', graphInstance.DFS());
+console.log('graphInstance.DFSRec', graphInstance.DFSRec());
 
 
-graph = new Graph(true);//有向图
+graphInstance = new Graph(true);//有向图
 myVertices=['A','B','C','D','E','F'];
 for (let i = 0; i < myVertices.length; i++) {
-    graph.addVertex(myVertices[i]);
+    graphInstance.addVertex(myVertices[i]);
 }
-graph.addEdge('A','C');
-graph.addEdge('A','D');
-graph.addEdge('B','D');
-graph.addEdge('B','E');
-graph.addEdge('C','F');
-graph.addEdge('F','E');
-console.log('graph.DAG', graph.DAG());
+graphInstance.addEdge('A','C');
+graphInstance.addEdge('A','D');
+graphInstance.addEdge('B','D');
+graphInstance.addEdge('B','E');
+graphInstance.addEdge('C','F');
+graphInstance.addEdge('F','E');
+console.log('graphInstance.DAG', graphInstance.DAG());
 
-
+console.log('Dijkstra', Dijkstra(
+    [
+        [0,2,4,Infinity,Infinity,Infinity],
+        [Infinity,0,2,4,2,Infinity],
+        [Infinity,Infinity,0,Infinity,3,Infinity],
+        [Infinity,Infinity,Infinity,0,Infinity,2],
+        [Infinity,Infinity,Infinity,3,0,2],
+        [Infinity,Infinity,Infinity,Infinity,Infinity,Infinity]
+    ], 0
+));
