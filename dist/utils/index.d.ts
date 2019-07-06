@@ -3,7 +3,7 @@
  * @author silverbulletlee
  */
 export declare type compareFunctionType<T> = (a: T, b: T) => number;
-export declare enum compare {
+export declare enum compareEnmu {
     LESS_THAN = -1,
     EQUAL = 0,
     BIGGER_THAN = 1

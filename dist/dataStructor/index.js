@@ -10,3 +10,5 @@ const DoublyLinkedList_1 = require("./DoublyLinkedList");
 exports.DoublyLinkedList = DoublyLinkedList_1.DoublyLinkedList;
 const BinarySearchTree_1 = require("./BinarySearchTree");
 exports.BinarySearchTree = BinarySearchTree_1.BinarySearchTree;
+const Graph_1 = require("./Graph");
+exports.Graph = Graph_1.Graph;

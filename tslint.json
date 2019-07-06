@@ -61,7 +61,8 @@
             "check-typecast",
             "check-type-operator",
             "check-preblock"
-        ]
+        ],
+        "interface-name": [false]
     }
 }
   

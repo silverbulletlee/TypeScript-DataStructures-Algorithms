@@ -4,18 +4,18 @@
  * @author silverbulletlee
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-var compare;
-(function (compare) {
-    compare[compare["LESS_THAN"] = -1] = "LESS_THAN";
-    compare[compare["EQUAL"] = 0] = "EQUAL";
-    compare[compare["BIGGER_THAN"] = 1] = "BIGGER_THAN";
-})(compare = exports.compare || (exports.compare = {}));
+var compareEnmu;
+(function (compareEnmu) {
+    compareEnmu[compareEnmu["LESS_THAN"] = -1] = "LESS_THAN";
+    compareEnmu[compareEnmu["EQUAL"] = 0] = "EQUAL";
+    compareEnmu[compareEnmu["BIGGER_THAN"] = 1] = "BIGGER_THAN";
+})(compareEnmu = exports.compareEnmu || (exports.compareEnmu = {}));
 exports.swap = (array, i, j) => {
     [array[i], array[j]] = [array[j], array[i]];
 };
 exports.defaultCompare = (a, b) => {
     if (a === b) {
-        return compare.EQUAL;
+        return compareEnmu.EQUAL;
     }
-    return a < b ? compare.LESS_THAN : compare.BIGGER_THAN;
+    return a < b ? compareEnmu.LESS_THAN : compareEnmu.BIGGER_THAN;
 };

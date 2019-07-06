@@ -4,14 +4,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @file 二叉搜索树类实现
  * @author silverbulletlee
  */
-const BSTNode_1 = require("./BSTNode");
+const TreeNode_1 = require("./TreeNode");
 const _utils_1 = require("@utils");
 const Stack_1 = require("../Stack");
 const Queue_1 = require("../Queue");
 class BinarySearchTree {
     constructor(compareFn = _utils_1.defaultCompare) {
-        this.compareFn = compareFn;
         this.root = null;
+        this.compareFn = _utils_1.defaultCompare;
+        this.compareFn = compareFn;
     }
     getRoot() {
         return this.root;
@@ -89,7 +90,7 @@ class BinarySearchTree {
         return this.postOrderRecHelper(this.root, []);
     }
     insertNode(val) {
-        let newNode = new BSTNode_1.BSTNode(val);
+        let newNode = new TreeNode_1.TreeNode(val);
         if (!this.root) {
             this.root = newNode;
         }
@@ -121,10 +122,10 @@ class BinarySearchTree {
         if (!node) {
             return false;
         }
-        if (this.compareFn(val, node.val) === _utils_1.compare.LESS_THAN) {
+        if (this.compareFn(val, node.val) === _utils_1.compareEnmu.LESS_THAN) {
             return this.findHelper(node.left, val);
         }
-        if (this.compareFn(val, node.val) === _utils_1.compare.BIGGER_THAN) {
+        if (this.compareFn(val, node.val) === _utils_1.compareEnmu.BIGGER_THAN) {
             return this.findHelper(node.right, val);
         }
         return true;
@@ -154,7 +155,7 @@ class BinarySearchTree {
         return res;
     }
     insertNodeHelper(node, newNode) {
-        if (this.compareFn(newNode.val, node.val) === _utils_1.compare.LESS_THAN) {
+        if (this.compareFn(newNode.val, node.val) === _utils_1.compareEnmu.LESS_THAN) {
             if (!node.left) {
                 node.left = newNode;
             }
@@ -175,11 +176,11 @@ class BinarySearchTree {
         if (!node) {
             return node;
         }
-        if (this.compareFn(val, node.val) === _utils_1.compare.LESS_THAN) {
+        if (this.compareFn(val, node.val) === _utils_1.compareEnmu.LESS_THAN) {
             node.left = this.removeHelper(node.left, val);
             return node;
         }
-        else if (this.compareFn(val, node.val) === _utils_1.compare.BIGGER_THAN) {
+        else if (this.compareFn(val, node.val) === _utils_1.compareEnmu.BIGGER_THAN) {
             node.right = this.removeHelper(node.right, val);
             return node;
         }

@@ -5,7 +5,8 @@ const {
     Queue,
     LinkedList,
     DoublyLinkedList,
-    BinarySearchTree
+    BinarySearchTree,
+    Graph
 } = dataStructor;
 
 const {
@@ -189,3 +190,41 @@ console.log('binarySearchTree', binarySearchTree);
 console.log('binarySearchTree.preOrderRec', binarySearchTree.preOrderRec());
 console.log('binarySearchTree.inOrderRec', binarySearchTree.inOrderRec());
 console.log('binarySearchTree.inOrderRec', binarySearchTree.postOrder());
+
+// 图
+let graph = new Graph();
+let myVertices=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
+for (let i=0; i < myVertices.length; i++){
+    graph.addVertex(myVertices[i]);
+}
+graph.addEdge('A','B');
+graph.addEdge('A','C');
+graph.addEdge('A','D');
+graph.addEdge('C','D');
+graph.addEdge('C','G');
+graph.addEdge('D','G');
+graph.addEdge('D','H');
+graph.addEdge('B','E');
+graph.addEdge('B','F');
+graph.addEdge('E','I');
+console.log('graph', graph.toString());
+console.log('graph.BFS', graph.BFS());
+console.log('graph.getShortestPath', graph.getShortestPath());
+console.log('graph.DFS', graph.DFS());
+console.log('graph.DFSRec', graph.DFSRec());
+
+
+graph = new Graph(true);//有向图
+myVertices=['A','B','C','D','E','F'];
+for (let i = 0; i < myVertices.length; i++) {
+    graph.addVertex(myVertices[i]);
+}
+graph.addEdge('A','C');
+graph.addEdge('A','D');
+graph.addEdge('B','D');
+graph.addEdge('B','E');
+graph.addEdge('C','F');
+graph.addEdge('F','E');
+console.log('graph.DAG', graph.DAG());
+
+

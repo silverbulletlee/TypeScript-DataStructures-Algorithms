@@ -5,7 +5,7 @@
 
 export type compareFunctionType<T> = (a: T, b: T) => number;
 
-export enum compare {
+export enum compareEnmu {
     LESS_THAN = -1,
     EQUAL = 0,
     BIGGER_THAN = 1,
@@ -17,7 +17,7 @@ export const swap = (array: number[], i: number, j: number): void => {
 
 export const defaultCompare = <T>(a: T, b: T): number => {
     if (a === b) {
-        return compare.EQUAL;
+        return compareEnmu.EQUAL;
     }
-    return a < b ? compare.LESS_THAN : compare.BIGGER_THAN;
+    return a < b ? compareEnmu.LESS_THAN : compareEnmu.BIGGER_THAN;
 };
