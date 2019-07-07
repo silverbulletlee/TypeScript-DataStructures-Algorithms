@@ -28,7 +28,8 @@ const {
 } = search;
 
 const {
-    Dijkstra
+    Dijkstra,
+    FloydWarshall
 } = graph;
 
 const arr = [5, 4, 6, 3, 7, 2, 8, 1, 9, 0];
@@ -231,13 +232,13 @@ graphInstance.addEdge('C','F');
 graphInstance.addEdge('F','E');
 console.log('graphInstance.DAG', graphInstance.DAG());
 
-console.log('Dijkstra', Dijkstra(
-    [
-        [0,2,4,Infinity,Infinity,Infinity],
-        [Infinity,0,2,4,2,Infinity],
-        [Infinity,Infinity,0,Infinity,3,Infinity],
-        [Infinity,Infinity,Infinity,0,Infinity,2],
-        [Infinity,Infinity,Infinity,3,0,2],
-        [Infinity,Infinity,Infinity,Infinity,Infinity,Infinity]
-    ], 0
-));
+let weightGraph = [
+    [0,2,4,Infinity,Infinity,Infinity],
+    [Infinity,0,2,4,2,Infinity],
+    [Infinity,Infinity,0,Infinity,3,Infinity],
+    [Infinity,Infinity,Infinity,0,Infinity,2],
+    [Infinity,Infinity,Infinity,3,0,2],
+    [Infinity,Infinity,Infinity,Infinity,Infinity,Infinity]
+]
+console.log('Dijkstra', Dijkstra(weightGraph, 0));
+console.log('FloydWarshall', FloydWarshall(weightGraph));

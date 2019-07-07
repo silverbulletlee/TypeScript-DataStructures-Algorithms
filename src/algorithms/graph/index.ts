@@ -1,3 +1,4 @@
 import { Dijkstra } from './Dijkstra';
+import { FloydWarshall } from './FloydWarshall';
 
-export { Dijkstra };
+export { Dijkstra, FloydWarshall };
