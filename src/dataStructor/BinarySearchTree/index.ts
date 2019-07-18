@@ -105,6 +105,9 @@ export class BinarySearchTree<T> {
         }
     }
     remove(val: T): void {
+        if (!this.find(val)) {
+            return;
+        }
         this.root = this.removeHelper(this.root, val);
     }
     protected getMaxDepthHelper(node: TreeNodeType<T> = this.root): number {
@@ -192,17 +195,15 @@ export class BinarySearchTree<T> {
 
         // 要删除的节点是叶子节点
         if (!node.left && !node.right) {
-            return (node = null);
+            return null;
         }
 
         // 要删除的节点有一个子节点
-        if (!node.left) {
-            return (node = node.right);
-        } else if (!node.right) {
-            return (node = node.left);
+        if ((!node.left && node.right) || (node.left && !node.right)) {
+            return node.left || node.right;
         }
 
-        // 要删除的节点有两个子节点(其实好像也可以找左子树最大的节点用来替换)
+        // 要删除的节点有两个子节点(其实也可以找左子树最大的节点用来替换)
         let aux = this.getMinHelper(node.right);
         node.val = aux.val;
         node.right = this.removeHelper(node.right, aux.val);

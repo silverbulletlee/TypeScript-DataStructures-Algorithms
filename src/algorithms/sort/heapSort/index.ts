@@ -45,7 +45,7 @@ export const heapSort = (array: number[]): number[] => {
     // 将待排序数组堆化
     heapify(array);
     for (let i = array.length - 1; i > 0; i--) {
-        // 最大堆堆定元素一直最大
+        // 最大堆堆顶元素一直最大
         swap(array, 0, i);
         // 重新建堆 将最大元素调整到堆顶
         buildMaxHeap(array, 0, i - 1);
