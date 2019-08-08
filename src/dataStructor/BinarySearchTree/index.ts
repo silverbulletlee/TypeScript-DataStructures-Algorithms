@@ -8,8 +8,8 @@ import { Stack } from '../Stack';
 import { Queue } from '../Queue';
 
 export class BinarySearchTree<T> {
-    protected root: TreeNodeType<T> = null;
-    protected compareFn: compareFunctionType<T> = defaultCompare;
+    private root: TreeNodeType<T> = null;
+    private compareFn: compareFunctionType<T> = defaultCompare;
     constructor(compareFn: compareFunctionType<T> = defaultCompare) {
         this.compareFn = compareFn;
     }
@@ -110,24 +110,24 @@ export class BinarySearchTree<T> {
         }
         this.root = this.removeHelper(this.root, val);
     }
-    protected getMaxDepthHelper(node: TreeNodeType<T> = this.root): number {
+    private getMaxDepthHelper(node: TreeNodeType<T> = this.root): number {
         return node ? 1 + Math.max(this.getMaxDepthHelper(node.left), this.getMaxDepthHelper(node.right)) : 0;
     }
-    protected getMinHelper(node: TreeNodeType<T> = this.root): TreeNodeType<T> {
+    private getMinHelper(node: TreeNodeType<T> = this.root): TreeNodeType<T> {
         let cur = node;
         while (cur && cur.left) {
             cur = cur.left;
         }
         return cur;
     }
-    protected getMaxHelper(node: TreeNodeType<T> = this.root): TreeNodeType<T> {
+    private getMaxHelper(node: TreeNodeType<T> = this.root): TreeNodeType<T> {
         let cur = node;
         while (cur && cur.right) {
             cur = cur.right;
         }
         return cur;
     }
-    protected findHelper(node: TreeNodeType<T> = this.root, val: T): boolean {
+    private findHelper(node: TreeNodeType<T> = this.root, val: T): boolean {
         if (!node) {
             return false;
         }
@@ -141,7 +141,7 @@ export class BinarySearchTree<T> {
 
         return true;
     }
-    protected preOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
+    private preOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
         if (!node) {
             res.push(node.val);
             this.preOrderRecHelper(node.left, res);
@@ -149,7 +149,7 @@ export class BinarySearchTree<T> {
         }
         return res;
     }
-    protected inOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[] = []): T[] {
+    private inOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[] = []): T[] {
         if (node) {
             this.inOrderRecHelper(node.left, res);
             res.push(node.val);
@@ -157,7 +157,7 @@ export class BinarySearchTree<T> {
         }
         return res;
     }
-    protected postOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
+    private postOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
         if (node) {
             this.postOrderRecHelper(node.left, res);
             this.postOrderRecHelper(node.right, res);
@@ -165,7 +165,7 @@ export class BinarySearchTree<T> {
         }
         return res;
     }
-    protected insertNodeHelper(node: TreeNodeType<T>, newNode: TreeNodeType<T>): void {
+    private insertNodeHelper(node: TreeNodeType<T>, newNode: TreeNodeType<T>): void {
         if (this.compareFn(newNode.val, node.val) === compareEnmu.LESS_THAN) {
             if (!node.left) {
                 node.left = newNode;
@@ -180,7 +180,7 @@ export class BinarySearchTree<T> {
             }
         }
     }
-    protected removeHelper(node: TreeNodeType<T> = this.root, val: T): TreeNodeType<T> {
+    private removeHelper(node: TreeNodeType<T> = this.root, val: T): TreeNodeType<T> {
         if (!node) {
             return node;
         }
