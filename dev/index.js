@@ -15,7 +15,10 @@ const {
     insertSort,
     mergeSort,
     quickSort,
-    heapSort
+    heapSort,
+    countSort,
+    bucketSort,
+    radixSort
 } = sort;
 
 const {
@@ -159,6 +162,17 @@ console.log('quickSort', quickSort(Array.from(arr)));
 
 // 堆排序 使用用例
 console.log('heapSort', heapSort(Array.from(arr)));
+
+// 计数排序 使用用例
+console.log('countSort', countSort(Array.from(arr)));
+
+// 桶排序 使用用例
+console.log('bucketSort', bucketSort(Array.from(arr), 5));
+
+// 基数排序 使用用例
+console.log('radixSort', radixSort([3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]));
+
+
 
 // 动态规划相关
 

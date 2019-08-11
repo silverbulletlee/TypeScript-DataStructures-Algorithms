@@ -11,7 +11,10 @@ export const countSort = (array: number[]): number[] => {
     for (let num of array) {
         max = Math.max(max, num);
         min = Math.min(min, num);
-        table[num] ? table[num]++ : (table[num] = 1);
+        if (!table[num]) {
+            table[num] = 0;
+        }
+        table[num]++;
     }
 
     array.length = 0;
