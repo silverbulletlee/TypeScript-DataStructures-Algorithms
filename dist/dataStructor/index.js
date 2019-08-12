@@ -12,3 +12,6 @@ const BinarySearchTree_1 = require("./BinarySearchTree");
 exports.BinarySearchTree = BinarySearchTree_1.BinarySearchTree;
 const Graph_1 = require("./Graph");
 exports.Graph = Graph_1.Graph;
+const Heap_1 = require("./Heap");
+exports.MaxHeap = Heap_1.MaxHeap;
+exports.MinHeap = Heap_1.MinHeap;

@@ -11,11 +11,11 @@ export enum compareEnmu {
     BIGGER_THAN = 1,
 }
 
-export const swap = (array: number[], i: number, j: number): void => {
+export const swap = <T>(array: (T | number)[], i: number, j: number): void => {
     [array[i], array[j]] = [array[j], array[i]];
 };
 
-export const defaultCompare = <T>(a: T, b: T): number => {
+export const defaultCompare = <T>(a: T, b: T): compareEnmu => {
     if (a === b) {
         return compareEnmu.EQUAL;
     }

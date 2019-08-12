@@ -6,7 +6,9 @@ const {
     LinkedList,
     DoublyLinkedList,
     BinarySearchTree,
-    Graph
+    Graph,
+    MinHeap,
+    MaxHeap
 } = dataStructor;
 
 const {
