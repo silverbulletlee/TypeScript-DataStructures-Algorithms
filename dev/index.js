@@ -258,3 +258,37 @@ let weightGraph = [
 ]
 console.log('Dijkstra', Dijkstra(weightGraph, 0));
 console.log('FloydWarshall', FloydWarshall(weightGraph));
+
+
+// 最小堆&最大堆
+let minHeap = new MinHeap();
+minHeap.insert(2);
+minHeap.insert(3);
+minHeap.insert(4);
+minHeap.insert(5);
+minHeap.insert(1);
+console.log('minHeap.getMin', minHeap.getMin());
+console.log('minHeap.size', minHeap.size());
+console.log('minHeap.isEmpty', minHeap.isEmpty());
+console.log('minHeap.toString', minHeap.toString());
+minHeap.delMin();
+console.log('minHeap.getMin', minHeap.getMin());
+console.log('minHeap.size', minHeap.size());
+console.log('minHeap.isEmpty', minHeap.isEmpty());
+console.log('minHeap.toString', minHeap.toString());
+
+let maxHeap = new MaxHeap();
+maxHeap.insert(2);
+maxHeap.insert(3);
+maxHeap.insert(4);
+maxHeap.insert(5);
+maxHeap.insert(1);
+console.log('maxHeap.getMax', maxHeap.getMax());
+console.log('maxHeap.size', maxHeap.size());
+console.log('maxHeap.isEmpty', maxHeap.isEmpty());
+console.log('maxHeap.toString', maxHeap.toString());
+maxHeap.delMax();
+console.log('maxHeap.getMax', maxHeap.getMax());
+console.log('maxHeap.size', maxHeap.size());
+console.log('maxHeap.isEmpty', maxHeap.isEmpty());
+console.log('maxHeap.toString', maxHeap.toString());

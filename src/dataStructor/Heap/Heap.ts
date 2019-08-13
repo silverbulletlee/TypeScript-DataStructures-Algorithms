@@ -29,6 +29,9 @@ export abstract class Heap<T> {
         this.heap.push(el);
         this.siftUp(this.size() - 1);
     }
+    toString(): string {
+        return JSON.stringify(this.heap);
+    }
     protected delTop(): T {
         let top = this.heap.shift();
 

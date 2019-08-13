@@ -30,6 +30,9 @@ class Heap {
         this.heap.push(el);
         this.siftUp(this.size() - 1);
     }
+    toString() {
+        return JSON.stringify(this.heap);
+    }
     delTop() {
         let top = this.heap.shift();
         if (this.size() === 0) {

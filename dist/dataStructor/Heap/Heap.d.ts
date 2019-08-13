@@ -13,6 +13,7 @@ export declare abstract class Heap<T> {
     size(): number;
     isEmpty(): boolean;
     insert(el: T): void;
+    toString(): string;
     protected delTop(): T;
     protected getTop(): T;
     protected abstract siftUp(index: number): void;
