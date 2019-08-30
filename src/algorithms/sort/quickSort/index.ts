@@ -5,7 +5,7 @@
 
 import { swap } from '@utils';
 
-export const quickSort = (array: number[], start: number = 0, end: number = array.length - 1): number[] => {
+const quickSortHelper = (array: number[], start: number = 0, end: number = array.length - 1): void => {
     if (start >= end) {
         return;
     }
@@ -34,8 +34,11 @@ export const quickSort = (array: number[], start: number = 0, end: number = arra
         }
     }
 
-    quickSort(array, start, pivotIndex - 1);
-    quickSort(array, pivotIndex + 1, end);
+    quickSortHelper(array, start, pivotIndex - 1);
+    quickSortHelper(array, pivotIndex + 1, end);
+};
 
+export const quickSort = (array: number[]): number[] => {
+    quickSortHelper(array);
     return array;
 };

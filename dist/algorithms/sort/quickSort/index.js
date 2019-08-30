@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const _utils_1 = require("@utils");
-exports.quickSort = (array, start = 0, end = array.length - 1) => {
+const quickSortHelper = (array, start = 0, end = array.length - 1) => {
     if (start >= end) {
         return;
     }
@@ -31,7 +31,10 @@ exports.quickSort = (array, start = 0, end = array.length - 1) => {
             i++;
         }
     }
-    exports.quickSort(array, start, pivotIndex - 1);
-    exports.quickSort(array, pivotIndex + 1, end);
+    quickSortHelper(array, start, pivotIndex - 1);
+    quickSortHelper(array, pivotIndex + 1, end);
+};
+exports.quickSort = (array) => {
+    quickSortHelper(array);
     return array;
 };

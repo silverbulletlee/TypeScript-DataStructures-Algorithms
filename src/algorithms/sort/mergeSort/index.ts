@@ -10,7 +10,7 @@ const merge = (left: number[], right: number[]): number[] => {
         left[0] <= right[0] ? res.push(left.shift()) : res.push(right.shift());
     }
 
-    return res.concat(left, right);
+    return res.concat(left.length ? left : right);
 };
 
 export const mergeSort = (array: number[]): number[] => {
