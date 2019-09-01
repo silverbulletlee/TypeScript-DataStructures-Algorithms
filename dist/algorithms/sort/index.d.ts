@@ -7,4 +7,5 @@ import { heapSort } from './heapSort';
 import { countSort } from './countSort';
 import { bucketSort } from './bucketSort';
 import { radixSort } from './radixSort';
-export { bubbleSort, selectSort, insertSort, mergeSort, quickSort, heapSort, countSort, bucketSort, radixSort };
+import { shellSort } from './shellSort';
+export { bubbleSort, selectSort, insertSort, mergeSort, quickSort, heapSort, countSort, bucketSort, radixSort, shellSort, };

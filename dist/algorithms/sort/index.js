@@ -18,3 +18,5 @@ const bucketSort_1 = require("./bucketSort");
 exports.bucketSort = bucketSort_1.bucketSort;
 const radixSort_1 = require("./radixSort");
 exports.radixSort = radixSort_1.radixSort;
+const shellSort_1 = require("./shellSort");
+exports.shellSort = shellSort_1.shellSort;

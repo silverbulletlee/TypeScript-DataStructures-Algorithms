@@ -20,7 +20,8 @@ const {
     heapSort,
     countSort,
     bucketSort,
-    radixSort
+    radixSort,
+    shellSort
 } = sort;
 
 const {
@@ -174,6 +175,8 @@ console.log('bucketSort', bucketSort(Array.from(arr), 5));
 // 基数排序 使用用例
 console.log('radixSort', radixSort([3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]));
 
+// 希尔排序使用用例
+console.log('shellSort', shellSort(Array.from(arr)));
 
 
 // 动态规划相关
