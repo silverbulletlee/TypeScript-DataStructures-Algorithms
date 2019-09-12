@@ -4,7 +4,7 @@
         "module": "commonjs",
         "declaration": true,
         "strict": true,
-        "outDir": "./dist",
+        "outDir": "dist",
         "esModuleInterop": true,
         "strictNullChecks": false,
         "baseUrl": "./",
