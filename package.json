@@ -12,7 +12,8 @@
     "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/tsc",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json",
-    "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\""
+    "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\"",
+    "postbuild": "node ./build/index.js"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build && node ./build/index.js && git add ./dist"
+      "pre-commit": "lint-staged && npm run build && git add ./dist"
     }
   },
   "lint-staged": {
@@ -56,8 +57,5 @@
       "npm run lint",
       "git add"
     ]
-  },
-  "dependencies": {
-    "wx2swan": "^1.2.20"
   }
 }

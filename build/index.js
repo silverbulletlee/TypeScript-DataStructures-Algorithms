@@ -59,12 +59,11 @@ const getFiles = dirPath => {
 };
 
 const compileFile = (filePath, dirPath) => {
-    readFile(filePath, (err, code) => {
+    readFile(filePath, 'utf-8', (err, code) => {
         if (err) {
             console.log(err);
             return;
         }
-        code = code.toString();
         let ast = babylon.parse(code);
         traverse(ast, {
             StringLiteral(path) {
