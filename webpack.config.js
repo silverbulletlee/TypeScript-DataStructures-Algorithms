@@ -7,7 +7,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const address = require('address');
-const opn = require('opn');
+const openBrowser = require('react-dev-utils/openBrowser');
 
 const ipv4 = address.ip() || '127.0.0.1';
 const port = 3000;
@@ -31,8 +31,8 @@ module.exports = {
         port,
         host: '0.0.0.0',
         after: () => {
-            // TODO 优化浏览器多次打开同一地址
-            opn(`http://${ipv4}:${port}`);
+            // 打开同一个tab只支持mac下的chrome～ 2333333
+            openBrowser(`http://${ipv4}:${port}`)
         }
     },
     resolve: {
