@@ -13,7 +13,23 @@
     "build": "./node_modules/.bin/tsc",
     "lint": "./node_modules/.bin/tslint -p tsconfig.json",
     "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\"",
-    "postbuild": "node ./build/index.js"
+    "postbuild": "node ./build/index.js",
+    "test": "./node_modules/.bin/jest ./test --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.ts?$": "ts-jest"
+    },
+    "testRegex": ".\/test/.*\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "moduleNameMapper": {
+      "@utils": "<rootDir>/src/utils",
+      "@src": "<rootDir>/src"
+    }
   },
   "repository": {
     "type": "git",
@@ -30,13 +46,16 @@
     "@babel/generator": "^7.5.5",
     "@babel/traverse": "^7.5.5",
     "@babel/types": "^7.5.5",
+    "@types/jest": "^24.0.18",
     "address": "^1.0.3",
     "babylon": "^6.18.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^2.3.0",
+    "jest": "^24.9.0",
     "lint-staged": "^8.1.7",
-    "react-dev-utils": "^9.0.3",
     "prettier": "^1.17.1",
+    "react-dev-utils": "^9.0.3",
+    "ts-jest": "^24.1.0",
     "ts-loader": "^5.3.3",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
@@ -48,7 +67,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run build && git add ./dist"
+      "pre-commit": "npm run test && lint-staged && npm run build && git add ./dist"
     }
   },
   "lint-staged": {
