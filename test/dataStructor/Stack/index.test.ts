@@ -9,9 +9,9 @@ test('Stack', () => {
     expect(stack.peek()).toBeUndefined();
     expect(stack.pop()).toBeUndefined();
 
-    expect(stack.push(5)).toEqual(stack.size());
-    expect(stack.push(8)).toEqual(stack.size());
-    expect(stack.push(11)).toEqual(stack.size());
+    expect(stack.push(5)).toEqual(1);
+    expect(stack.push(8)).toEqual(2);
+    expect(stack.push(11)).toEqual(3);
 
     expect(stack.isEmpty()).toBeFalsy();
     expect(stack.size()).toEqual(3);

@@ -9,9 +9,9 @@ test('Queue', () => {
     expect(queue.front()).toBeUndefined();
     expect(queue.dequeue()).toBeUndefined();
 
-    expect(queue.enqueue(5)).toEqual(queue.size());
-    expect(queue.enqueue(8)).toEqual(queue.size());
-    expect(queue.enqueue(11)).toEqual(queue.size());
+    expect(queue.enqueue(5)).toEqual(1);
+    expect(queue.enqueue(8)).toEqual(2);
+    expect(queue.enqueue(11)).toEqual(3);
 
     expect(queue.isEmpty()).toBeFalsy();
     expect(queue.size()).toEqual(3);
