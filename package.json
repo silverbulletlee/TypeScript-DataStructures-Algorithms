@@ -72,8 +72,8 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "npm run format",
-      "npm run lint",
+      "./node_modules/.bin/prettier --write",
+      "./node_modules/.bin/tslint -p tsconfig.json",
       "git add"
     ]
   }
