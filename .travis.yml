@@ -26,8 +26,14 @@ jobs:
         - npm version
         - npm run build
         - echo "NPM Building Finished."
+        - rm -rf ./npmrc
       deploy:
         provider: npm
         email: silverbulletlee@gmail.com
         api_key: "$NPM_TOKEN"
         skip_cleanup: true
+        on:
+          tags: true
+          branch: master
+        tag: latest
+        condition: '$TRAVIS_TAG =~ ^v(\d+{2}).\d+$'
