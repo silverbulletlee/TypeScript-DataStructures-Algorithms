@@ -36,4 +36,4 @@ jobs:
           tags: true
           branch: master
         tag: latest
-        condition: '$TRAVIS_TAG =~ ^v(\d+{2}).\d+$'
+        condition: '$TRAVIS_TAG =~ ^v(\d+.){2}\d+$'
