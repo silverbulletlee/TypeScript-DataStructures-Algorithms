@@ -49,7 +49,7 @@ class MinHeap extends Heap_1.Heap {
     } // 只有左子树，说明交换也到了最后一层
 
 
-    if (leftIndex < size && rightIndex >= size) {
+    if (rightIndex >= size) {
       if (this.compareFn(this.heap[leftIndex], this.heap[index]) === _utils_1.compareEnmu.LESS_THAN) {
         _utils_1.swap(this.heap, leftIndex, index);
       }

@@ -37,7 +37,7 @@ export class MinHeap<T> extends Heap<T> {
             return;
         }
         // 只有左子树，说明交换也到了最后一层
-        if (leftIndex < size && rightIndex >= size) {
+        if (rightIndex >= size) {
             if (this.compareFn(this.heap[leftIndex], this.heap[index]) === compareEnmu.LESS_THAN) {
                 swap<T>(this.heap, leftIndex, index);
             }
