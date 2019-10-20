@@ -1,6 +1,6 @@
 import { MaxHeap, MinHeap } from '../../../src/dataStructor/Heap';
 import { Heap } from '../../../src/dataStructor/Heap/Heap';
-
+// Uncovered Line 29 issue https://github.com/gotwarlost/istanbul/issues/35
 test('Heap', () => {
     class TestHeap<T> extends Heap<T> {
         protected siftUp(index: number): void {
