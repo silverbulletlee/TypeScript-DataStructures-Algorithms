@@ -52,9 +52,8 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
             }
             res = cur.next;
             cur.next = cur.next.next;
-            if (cur.next) {
-                cur.next.prev = cur;
-            }
+            // cur.next 一定存在，否则会走到上面得分支
+            cur.next.prev = cur;
         }
 
         this._size--;
@@ -84,10 +83,9 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
             cur.next = listNode;
             listNode.prev = cur;
 
-            if (next) {
-                listNode.next = next;
-                next.prev = listNode;
-            }
+            // next 一定存在否则会走到 line 67 的分支
+            listNode.next = next;
+            next.prev = listNode;
         }
         this._size++;
 

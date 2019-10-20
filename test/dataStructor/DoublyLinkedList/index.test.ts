@@ -1,6 +1,5 @@
 import { DoublyLinkedList } from '../../../src/dataStructor/DoublyLinkedList';
 
-// Uncovered Line 55 87 issue https://github.com/gotwarlost/istanbul/issues/35
 test('DoublyLinkedList', () => {
     let doublyLinkedList = new DoublyLinkedList<number>();
 
