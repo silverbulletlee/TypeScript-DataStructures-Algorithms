@@ -26,7 +26,7 @@ export class MaxHeap<T> extends Heap<T> {
             this.siftUp(parentIndex);
         }
     }
-    protected siftDown(index: number = 0): void {
+    protected siftDown(index: number): void {
         let leftIndex = Heap.getLeftIndex(index);
         let rightIndex = Heap.getRightIndex(index);
 

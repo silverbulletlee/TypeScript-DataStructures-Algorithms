@@ -39,7 +39,7 @@ class MaxHeap extends Heap_1.Heap {
     }
   }
 
-  siftDown(index = 0) {
+  siftDown(index) {
     let leftIndex = Heap_1.Heap.getLeftIndex(index);
     let rightIndex = Heap_1.Heap.getRightIndex(index);
     let size = this.size(); // 没有左子树，必然没有右子树，交换到了最后一层

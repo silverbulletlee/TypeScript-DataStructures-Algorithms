@@ -9,5 +9,5 @@ export declare class MaxHeap<T> extends Heap<T> {
     getMax(): T;
     delMax(): T;
     protected siftUp(index: number): void;
-    protected siftDown(index?: number): void;
+    protected siftDown(index: number): void;
 }

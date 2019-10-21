@@ -9,5 +9,5 @@ export declare class MinHeap<T> extends Heap<T> {
     getMin(): T;
     delMin(): T;
     protected siftUp(index: number): void;
-    protected siftDown(index?: number): void;
+    protected siftDown(index: number): void;
 }
