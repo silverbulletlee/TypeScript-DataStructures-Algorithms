@@ -81,8 +81,8 @@ export class BinarySearchTree<T> {
         while (!stack.isEmpty()) {
             let node = stack.pop();
             res.unshift(node.val);
-            node.right && stack.push(node.right);
             node.left && stack.push(node.left);
+            node.right && stack.push(node.right);
         }
 
         return res;
@@ -159,8 +159,8 @@ export class BinarySearchTree<T> {
 
         return true;
     }
-    private preOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
-        if (!node) {
+    private preOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[] = []): T[] {
+        if (node) {
             res.push(node.val);
             this.preOrderRecHelper(node.left, res);
             this.preOrderRecHelper(node.right, res);
@@ -175,7 +175,7 @@ export class BinarySearchTree<T> {
         }
         return res;
     }
-    private postOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[]): T[] {
+    private postOrderRecHelper(node: TreeNodeType<T> = this.root, res: T[] = []): T[] {
         if (node) {
             this.postOrderRecHelper(node.left, res);
             this.postOrderRecHelper(node.right, res);
