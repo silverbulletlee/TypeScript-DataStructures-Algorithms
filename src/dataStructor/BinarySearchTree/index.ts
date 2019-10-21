@@ -110,6 +110,24 @@ export class BinarySearchTree<T> {
         }
         this.root = this.removeHelper(this.root, val);
     }
+    toString(separator: string = ','): string {
+        let res: (T | '#')[] = [];
+        let stack = new Stack<TreeNodeType<T>>();
+
+        this.root && stack.push(this.root);
+
+        while (!stack.isEmpty()) {
+            let node = stack.pop();
+            if (node) {
+                res.push(node.val);
+                stack.push(node.right);
+                stack.push(node.left);
+            } else {
+                res.push('#');
+            }
+        }
+        return res.join(separator);
+    }
     private getMaxDepthHelper(node: TreeNodeType<T> = this.root): number {
         return node ? 1 + Math.max(this.getMaxDepthHelper(node.left), this.getMaxDepthHelper(node.right)) : 0;
     }

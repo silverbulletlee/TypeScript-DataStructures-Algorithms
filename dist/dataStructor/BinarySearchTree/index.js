@@ -137,6 +137,26 @@ class BinarySearchTree {
     this.root = this.removeHelper(this.root, val);
   }
 
+  toString(separator = ',') {
+    let res = [];
+    let stack = new Stack_1.Stack();
+    this.root && stack.push(this.root);
+
+    while (!stack.isEmpty()) {
+      let node = stack.pop();
+
+      if (node) {
+        res.push(node.val);
+        stack.push(node.right);
+        stack.push(node.left);
+      } else {
+        res.push('#');
+      }
+    }
+
+    return res.join(separator);
+  }
+
   getMaxDepthHelper(node = this.root) {
     return node ? 1 + Math.max(this.getMaxDepthHelper(node.left), this.getMaxDepthHelper(node.right)) : 0;
   }

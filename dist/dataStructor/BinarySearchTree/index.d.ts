@@ -22,6 +22,7 @@ export declare class BinarySearchTree<T> {
     postOrderRec(): T[];
     insertNode(val: T): void;
     remove(val: T): void;
+    toString(separator?: string): string;
     private getMaxDepthHelper;
     private getMinHelper;
     private getMaxHelper;
