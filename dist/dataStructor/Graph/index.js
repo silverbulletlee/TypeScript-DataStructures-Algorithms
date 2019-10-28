@@ -38,6 +38,51 @@ class Graph {
 
   getAdjList() {
     return this.adjList;
+  } // 为两条顶点添加边
+
+
+  addEdge(v, u) {
+    if (!this.adjList.has(v)) {
+      this.addVertex(v);
+    }
+
+    if (!this.adjList.has(u)) {
+      this.addVertex(u);
+    }
+
+    this.adjList.get(v).push(u);
+
+    if (!this.isDirected) {
+      this.adjList.get(u).push(v);
+    }
+  } // 添加顶点
+
+
+  addVertex(v) {
+    // 顶点不存在于图中
+    if (!this.adjList.has(v)) {
+      this.vertices.push(v);
+      this.adjList.set(v, []);
+    }
+  }
+
+  toString() {
+    let res = [];
+
+    for (let v of this.vertices) {
+      let subRes = `${v} ->`;
+      let neighbors = this.adjList.get(v);
+
+      if (neighbors.length) {
+        for (let neighbor of neighbors) {
+          subRes += ` ${neighbor}`;
+        }
+
+        res.push(subRes);
+      }
+    }
+
+    return JSON.stringify(res);
   }
 
   BFS(vertex = this.vertices[0]) {
@@ -65,7 +110,7 @@ class Graph {
     return res;
   }
 
-  getShortestPath(vertex = this.vertices[0]) {
+  getShortestPaths(vertex = this.vertices[0]) {
     let verticesState = this.initVerticesState();
     let queue = new Queue_1.Queue();
     let distances = new Map();
@@ -148,49 +193,6 @@ class Graph {
     }
 
     return [...this.DAGHelper().finishTime].sort((v, u) => u[1] - v[1]).map(v => v[0]);
-  } // 为两条顶点添加边
-
-
-  addEdge(v, u) {
-    if (!this.adjList.has(v)) {
-      this.addVertex(v);
-    }
-
-    if (!this.adjList.has(u)) {
-      this.addVertex(u);
-    }
-
-    this.adjList.get(v).push(u);
-
-    if (!this.isDirected) {
-      this.adjList.get(u).push(v);
-    }
-  } // 添加顶点
-
-
-  addVertex(v) {
-    // 顶点不存在于图中
-    if (!this.adjList.has(v)) {
-      this.vertices.push(v);
-      this.adjList.set(v, []);
-    }
-  }
-
-  toString() {
-    let res = '';
-
-    for (let v of this.vertices) {
-      res += `${v} ->`;
-      let neighbors = this.adjList.get(v);
-
-      for (let neighbor of neighbors) {
-        res += ` ${neighbor}`;
-      }
-
-      res += '\n';
-    }
-
-    return res;
   }
 
   initVerticesState() {

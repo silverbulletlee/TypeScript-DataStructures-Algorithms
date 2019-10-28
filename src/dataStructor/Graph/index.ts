@@ -39,6 +39,41 @@ export class Graph<T> {
     getAdjList(): Map<T, T[]> {
         return this.adjList;
     }
+    // 为两条顶点添加边
+    addEdge(v: T, u: T): void {
+        if (!this.adjList.has(v)) {
+            this.addVertex(v);
+        }
+        if (!this.adjList.has(u)) {
+            this.addVertex(u);
+        }
+        this.adjList.get(v).push(u);
+        if (!this.isDirected) {
+            this.adjList.get(u).push(v);
+        }
+    }
+    // 添加顶点
+    addVertex(v: T): void {
+        // 顶点不存在于图中
+        if (!this.adjList.has(v)) {
+            this.vertices.push(v);
+            this.adjList.set(v, []);
+        }
+    }
+    toString(): string {
+        let res = [];
+        for (let v of this.vertices) {
+            let subRes = `${v} ->`;
+            let neighbors = this.adjList.get(v);
+            if (neighbors.length) {
+                for (let neighbor of neighbors) {
+                    subRes += ` ${neighbor}`;
+                }
+                res.push(subRes);
+            }
+        }
+        return JSON.stringify(res);
+    }
     BFS(vertex: T = this.vertices[0]): T[] {
         let res: T[] = [];
         let queue = new Queue<T>();
@@ -59,7 +94,7 @@ export class Graph<T> {
         }
         return res;
     }
-    getShortestPath(vertex: T = this.vertices[0]): getShortestPathInterface<T> {
+    getShortestPaths(vertex: T = this.vertices[0]): getShortestPathInterface<T> {
         let verticesState = this.initVerticesState();
         let queue = new Queue<T>();
         let distances = new Map();
@@ -136,39 +171,6 @@ export class Graph<T> {
             return;
         }
         return [...this.DAGHelper().finishTime].sort((v, u) => u[1] - v[1]).map(v => v[0]);
-    }
-    // 为两条顶点添加边
-    addEdge(v: T, u: T): void {
-        if (!this.adjList.has(v)) {
-            this.addVertex(v);
-        }
-        if (!this.adjList.has(u)) {
-            this.addVertex(u);
-        }
-        this.adjList.get(v).push(u);
-        if (!this.isDirected) {
-            this.adjList.get(u).push(v);
-        }
-    }
-    // 添加顶点
-    addVertex(v: T): void {
-        // 顶点不存在于图中
-        if (!this.adjList.has(v)) {
-            this.vertices.push(v);
-            this.adjList.set(v, []);
-        }
-    }
-    toString(): string {
-        let res = '';
-        for (let v of this.vertices) {
-            res += `${v} ->`;
-            let neighbors = this.adjList.get(v);
-            for (let neighbor of neighbors) {
-                res += ` ${neighbor}`;
-            }
-            res += '\n';
-        }
-        return res;
     }
     private initVerticesState(): Map<T, vertexStateEnum> {
         let state = new Map();

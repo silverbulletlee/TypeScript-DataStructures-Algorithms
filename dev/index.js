@@ -228,7 +228,7 @@ graphInstance.addEdge('B','F');
 graphInstance.addEdge('E','I');
 console.log('graphInstance', graphInstance.toString());
 console.log('graphInstance.BFS', graphInstance.BFS());
-console.log('graphInstance.getShortestPath', graphInstance.getShortestPath());
+console.log('graphInstance.getShortestPaths', graphInstance.getShortestPaths());
 console.log('graphInstance.DFS', graphInstance.DFS());
 console.log('graphInstance.DFSRec', graphInstance.DFSRec());
 
